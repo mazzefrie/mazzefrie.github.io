@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>mazzefrie</title>
+    <title>Matthias Friedmann</title>
     <description>An awesome description for my new site. 
 </description>
     <link>https://mazzefrie.github.io//</link>
     <atom:link href="https://mazzefrie.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 16 Apr 2018 13:32:30 +0100</pubDate>
-    <lastBuildDate>Mon, 16 Apr 2018 13:32:30 +0100</lastBuildDate>
+    <pubDate>Tue, 17 Apr 2018 13:11:54 +0100</pubDate>
+    <lastBuildDate>Tue, 17 Apr 2018 13:11:54 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
         <title>Mapping historians</title>
         <description>&lt;p&gt;Mapping the german history as social network&lt;/p&gt;
 </description>
-        <pubDate>Mon, 16 Apr 2018 14:20:52 +0100</pubDate>
-        <link>https://mazzefrie.github.io//2018/04/16/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">https://mazzefrie.github.io//2018/04/16/welcome-to-jekyll.html</guid>
+        <pubDate>Mon, 16 Apr 2018 00:00:00 +0100</pubDate>
+        <link>https://mazzefrie.github.io//2018/04/16/mapping-historians/</link>
+        <guid isPermaLink="true">https://mazzefrie.github.io//2018/04/16/mapping-historians/</guid>
         
         
       </item>

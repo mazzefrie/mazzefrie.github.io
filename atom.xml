@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>Matthias Friedmann</title>
+ <link href="https://mazzefrie.github.io//atom.xml" rel="self"/>
+ <link href="https://mazzefrie.github.io//"/>
+ <updated>2018-04-17T13:11:54+01:00</updated>
+ <id>https://mazzefrie.github.io/</id>
+ <author>
+   <name></name>
+   <email></email>
+ </author>
+
+ 
+ <entry>
+   <title>Mapping historians</title>
+   <link href="https://mazzefrie.github.io//2018/04/16/mapping-historians/"/>
+   <updated>2018-04-16T00:00:00+01:00</updated>
+   <id>https://mazzefrie.github.io//2018/04/16/mapping-historians</id>
+   <content type="html">&lt;p&gt;Mapping the german history as social network&lt;/p&gt;
+</content>
+ </entry>
+ 
+
+</feed>
