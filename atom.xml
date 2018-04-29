@@ -4,7 +4,7 @@
  <title>Matthias Friedmann</title>
  <link href="https://mazzefrie.github.io//atom.xml" rel="self"/>
  <link href="https://mazzefrie.github.io//"/>
- <updated>2018-04-29T16:47:45+02:00</updated>
+ <updated>2018-04-29T16:49:42+02:00</updated>
  <id>https://mazzefrie.github.io/</id>
  <author>
    <name></name>
@@ -118,7 +118,7 @@ UNION
 	&lt;script src=&quot;https://code.jquery.com/jquery-2.2.4.min.js&quot;&gt;&lt;/script&gt;
 	&lt;script async=&quot;&quot; defer=&quot;&quot; src=&quot;https://maps.googleapis.com/maps/api/js?key=AIzaSyAdOZfFrKhQClV095scFqZdSSGN417MAYM&amp;amp;callback=initMap&quot;&gt;&lt;/script&gt;
 	&lt;script&gt;
-		var url = &quot;http://dbpedia.org/sparql&quot;;
+		var url = &quot;https://dbpedia.org/sparql&quot;;
 
 		var query =[&quot;SELECT DISTINCT ?person,?name,?birthplace,$lat,$long&quot;,
 		&quot;WHERE  {&quot;,
