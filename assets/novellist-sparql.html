@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Wo waren die meisten Konferenzen?</title>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 80%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+  	<p>Geburtsorte deutsche Schriftsteller aus dem 19.,20. und 21. Jahrhundert</p>
+    <div id="map"></div>
+    <div id="query"></div>
+
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdOZfFrKhQClV095scFqZdSSGN417MAYM&callback=initMap"></script>
+	<script>
+		var url = "http://dbpedia.org/sparql";
+
+		var query =["SELECT DISTINCT ?person,?name,?birthplace,$lat,$long",
+		"WHERE  {",
+		"{?person <http://purl.org/dc/terms/subject> <http://dbpedia.org/resource/Category:19th-century_German_novelists>}",
+		"UNION",
+		"{?person <http://purl.org/dc/terms/subject> <http://dbpedia.org/resource/Category:20th-century_German_novelists>}",
+		"UNION",
+		"{?person <http://purl.org/dc/terms/subject> <http://dbpedia.org/resource/Category:21th-century_German_novelists>}",
+		"?person dbo:birthPlace ?birthplace .",
+		"?person foaf:name ?name .",
+		"?birthplace geo:lat ?lat .",
+		"?birthplace geo:long ?long",
+		"}"];
+
+		$("#query").html("<pre>SPARQL-Query:\n"+query.join("\n")+"</pre>");
+
+		function initMap() {
+			var queryUrl = url+"?query="+ encodeURIComponent(query.join(" ")) +"&format=json";
+
+	        var map = new google.maps.Map(document.getElementById('map'), {
+	          	zoom: 6,
+	          	center: {lat: 52.50205, lng: 13.40704}
+	        });
+
+			$.getJSON( queryUrl, function( data ) {
+			  $.each( data["results"]["bindings"], function( key, val ) {
+
+			  	console.log(val['lat']['value']);
+	           	var marker = new google.maps.Marker({
+	                position:  {
+	                	lat: parseFloat(val['lat']['value']),
+	                	lng: parseFloat(val['long']['value'])},
+	                map: map,
+	                title: val['name']['value']
+	              });
+
+			  });
+			 
+			});
+		}
+	</script>
+  </body>
+</html>
