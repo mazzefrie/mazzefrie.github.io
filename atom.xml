@@ -4,7 +4,7 @@
  <title>Matthias Friedmann</title>
  <link href="https://mazzefrie.github.io//atom.xml" rel="self"/>
  <link href="https://mazzefrie.github.io//"/>
- <updated>2018-04-29T15:42:36+02:00</updated>
+ <updated>2018-04-29T16:47:45+02:00</updated>
  <id>https://mazzefrie.github.io/</id>
  <author>
    <name></name>
@@ -168,7 +168,30 @@ UNION
    <link href="https://mazzefrie.github.io//2018/04/17/konferenzbericht-quelle-daten/"/>
    <updated>2018-04-17T00:00:00+02:00</updated>
    <id>https://mazzefrie.github.io//2018/04/17/konferenzbericht-quelle-daten</id>
-   <content type="html">&lt;p&gt;Die Konferenzberichte von HSozKult weisen zunächst nur bedingt Anhaltspunkte auf mit deren Hife sich Metadaten identifizieren ließen. Allerdings erkennt man im Quelltext durchaus einen regelhaften Aufbau: Mit CSS-Klassen wie &lt;em&gt;hfn-item-key&lt;/em&gt; oder &lt;em&gt;metaBlock&lt;/em&gt; und &lt;em&gt;metaBlockKey&lt;/em&gt; sowie den dem Geschwister oder Eltern-Selektor können identifiziert werden. Auf Basis der CSS-Klassen lassen sich die Daten jeweils Ort, Name und Datum der Konferenz auslesen, ebenso der Autor des Berichts sowie die vergeben Schlagworte.&lt;/p&gt;
+   <content type="html">&lt;p&gt;Die Tagungsberichte von HSozKult enthalten neben einer umfassenden Zusammenfassung der Vorträge viele nützliche Informationen: Name und Ursprung des Berichts, Thema, Zeit und Ort der Konferenz, Namen und Herkunftsorte der Referenten sowie durch die Redakteure vergeben Schlagworte für die Epochen und Themenbereiche der Veranstaltung. Die meisten dieser Daten lassen sich regelhaft auslesen.&lt;/p&gt;
+
+&lt;nav class=&quot;toc&quot;&gt;
+  &lt;h4&gt;Inhalt&lt;/h4&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#lesen-und-normalisierung-der-daten&quot; id=&quot;markdown-toc-lesen-und-normalisierung-der-daten&quot;&gt;Lesen und Normalisierung der Daten&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#part-of-speech-zur-identifikation-der-teilnehmer&quot; id=&quot;markdown-toc-part-of-speech-zur-identifikation-der-teilnehmer&quot;&gt;Part-of-Speech zur Identifikation der Teilnehmer&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#probleme&quot; id=&quot;markdown-toc-probleme&quot;&gt;Probleme&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#teilnehmer-pro-konferenz-im-jahresdurchschnitt-stand-vom-28042018&quot; id=&quot;markdown-toc-teilnehmer-pro-konferenz-im-jahresdurchschnitt-stand-vom-28042018&quot;&gt;Teilnehmer pro Konferenz im Jahresdurchschnitt, Stand vom 28.04.2018:&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#die-datenstze&quot; id=&quot;markdown-toc-die-datenstze&quot;&gt;Die Datensätze&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#liste-der-konferenzen&quot; id=&quot;markdown-toc-liste-der-konferenzen&quot;&gt;Liste der Konferenzen&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#liste-der-teilnehmer&quot; id=&quot;markdown-toc-liste-der-teilnehmer&quot;&gt;Liste der Teilnehmer&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#nchste-schritte&quot; id=&quot;markdown-toc-nchste-schritte&quot;&gt;Nächste Schritte&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#link-zum-aktuellen-gist&quot; id=&quot;markdown-toc-link-zum-aktuellen-gist&quot;&gt;Link zum aktuellen Gist&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/nav&gt;
+
+&lt;h2 id=&quot;lesen-und-normalisierung-der-daten&quot;&gt;Lesen und Normalisierung der Daten&lt;/h2&gt;
+&lt;p&gt;Die Konferenzberichte von HSozKult weisen zunächst nur bedingt Anhaltspunkte auf mit deren Hife sich Metadaten identifizieren ließen. Allerdings erkennt man im Quelltext durchaus einen regelhaften Aufbau: Mit CSS-Klassen wie &lt;em&gt;hfn-item-key&lt;/em&gt; oder &lt;em&gt;metaBlock&lt;/em&gt; und &lt;em&gt;metaBlockKey&lt;/em&gt; sowie den dem Geschwister oder Eltern-Selektor können identifiziert werden. Auf Basis der CSS-Klassen lassen sich die Daten jeweils Ort, Name und Datum der Konferenz auslesen, ebenso der Autor des Berichts sowie die vergeben Schlagworte.&lt;/p&gt;
 
 &lt;h2 id=&quot;part-of-speech-zur-identifikation-der-teilnehmer&quot;&gt;Part-of-Speech zur Identifikation der Teilnehmer&lt;/h2&gt;
 &lt;p&gt;Der Text des Berichts selbst jedoch besteht aus nicht semantischem HTML. Daten aus diesem Berich zu extrahieren bedarf also eines größeren Aufwands. Mit Hilfe er &lt;em&gt;nltk&lt;/em&gt;-Bibliothek lässt sich der Text zunächst in tokens zerlegen und eine part-of-speech-Erkennung durchführen. &lt;em&gt;nltk&lt;/em&gt; wird jedoch zunächst nur mit einem englischen Model geliefert und daher muss zunächst ein entsprechendes Model für die deutsche Sprache geladen werden.&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
@@ -184,7 +207,7 @@ UNION
 	tagged = tagger.tag(tokens)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Damit erhalt man einen entsprechenden Graphen, in dem die jeweilien Tokens in ihrer Funktion im Satz identifiziert wurden. Dabei konnten Tokens als Namen identifiziert werden. Allerdings wird dabei noch nicht zwischen Vor- und Nachnamen oder gar Orts- und funktionalen Namen (“Universität”) unterschieden.  Es zeigt sich jedoch, dass in der Mehrheit der Berichte die redaktionelle Konvention besteht, die Namen von Rednern in Großbuchstaben gefolgt von dem Ortnamen darzustellen:&lt;/p&gt;
+&lt;p&gt;Damit erhalt man einen entsprechenden Graphen, in dem die jeweilien Tokens in ihrer Funktion im Satz identifiziert wurden. Dabei konnten Tokens als Namen identifiziert werden. Allerdings wird dabei noch nicht zwischen Vor- und Nachnamen oder gar Orts- und funktionalen Namen (“Universität”) unterschieden. Es zeigt sich jedoch, dass in der Mehrheit der Berichte die redaktionelle Konvention besteht, die Namen von Rednern in Großbuchstaben gefolgt von dem Ortnamen darzustellen:&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;MATTHIAS FRIEDMANN (Münster) stellte in seinem Vortrag die wichtige kommunikative Funktion von Informationen dar.&lt;/p&gt;
@@ -204,7 +227,7 @@ UNION
             pass        
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Sicherlich gäbe es dafür auch eine elegantere Lösung.&lt;/p&gt;
+&lt;p&gt;Sicherlich gäbe es dafür auch eine elegantere Lösung. Prinzipiell könnte dies auch mit regulären Ausdrücken umgesetzt werden.&lt;/p&gt;
 
 &lt;p&gt;Einige Fehler traten dabei auf, wenn mehrere Namen in Folge aufgelistet und nicht deutlich getrennt wurden, bei Namen die aus mehr als zwei Bausteinen (beispielsweise Namen mit “van” oder abgekürztem Zweitnamen) bestehen sowie schließlich Namen, bei denen die Konvention in Großbuchstaben zu schreiben nicht eingehalten wurden, was bei einem Teil der Berichte der Fall ist.&lt;/p&gt;
 
@@ -213,21 +236,21 @@ UNION
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;Manche Konferenzberichte waren jedoch auf Englisch geschrieben und der deutsche Tagger konnte daher die Namen nicht erkennen. Es bedarf also zusätzlich einer Spracherkennung&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+    &lt;p&gt;Manche Konferenzberichte waren auf Englisch geschrieben und der deutsche Tagger konnte daher die Namen nicht immer erkennen. Es bedurfte also zusätzlich einer Spracherkennung&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Schrägstriche zwischen Namen führten dazu, dass Namen nicht auseinandergehalten werden konnten. Ebenso wurden FREIBURG/ KIEL oder HEIDELBERG/ LONDON als ein Name erkannt.&lt;/p&gt;
+    &lt;p&gt;Schrägstriche zwischen Namen führten dazu, dass diese nicht auseinandergehalten werden konnten. Ebenso wurden FREIBURG/ KIEL oder HEIDELBERG/ LONDON als Name erkannt.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Der Tagger hatte Probleme mit osteuropäischen Namen, besonders wenn sie Akkzente enthielten. Ich habe diese daher schlicht entfernt&lt;/p&gt;
+    &lt;p&gt;Der Tagger hatte Probleme mit osteuropäischen Namen, besonders wenn sie Akkzente enthielten. Ich habe diese daher schlicht entfernt.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;BeautifulSoup hat in der full_text()-Funktion keine Leerzeichen nach Absätzen gelassen. Fing ein neuer Absatz mit einem Namen an, konnte der Tokenizer keine Trennung identifizieren.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Stand am 28.04.2018: 
-&lt;img src=&quot;/images/avg-part-2804.png&quot; alt=&quot;Durchschnittliche Konferenzgröße&quot; /&gt;
+&lt;h3 id=&quot;teilnehmer-pro-konferenz-im-jahresdurchschnitt-stand-vom-28042018&quot;&gt;Teilnehmer pro Konferenz im Jahresdurchschnitt, Stand vom 28.04.2018:&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/images/avg-part-2804.png&quot; alt=&quot;Durchschnittliche Konferenzgröße&quot; /&gt;
 2323 Konferenzen mit weniger als 9 Teilnehmern: 8: 392, 7: 379, 6: 374, 5: 332, 4: 294, 3: 209, 1: 189, 2: 154&lt;/p&gt;
 
 &lt;h2 id=&quot;die-datenstze&quot;&gt;Die Datensätze&lt;/h2&gt;
@@ -260,18 +283,17 @@ UNION
 &lt;p&gt;Dieser Datensatz kann nun weiter verarbeitet werden um beispielsweise ein soziales Netzwerk mit Gephi darzustellen.&lt;/p&gt;
 
 &lt;h2 id=&quot;link-zum-aktuellen-gist&quot;&gt;Link zum aktuellen Gist&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://gist.github.com/mazzefrie/ab420fd691bb0c35820102aa633631d1&quot;&gt;extract_data.py&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;Ich habe einige Ansätze zum weiteren Ausbau des Skripts vorgesehen, da aufgrund der vielen Fehler mehrere druchläufe notwendig wurden und werden.
+* &lt;a href=&quot;https://gist.github.com/mazzefrie/ab420fd691bb0c35820102aa633631d1&quot;&gt;extract_data.py&lt;/a&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 &lt;div class=&quot;footnotes&quot;&gt;
   &lt;ol&gt;
     &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;Mit Hilfe des Tiger-Korpus lässt sich ein entsprechendes Model trainieren, siehe https://datascience.blog.wzb.eu/2016/07/13/accurate-part-of-speech-tagging-of-german-texts-with-nltk/ &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;Mit Hilfe des Tiger-Korpus lässt sich ein entsprechendes Model trainieren, siehe &lt;a href=&quot;https://datascience.blog.wzb.eu/2016/07/13/accurate-part-of-speech-tagging-of-german-texts-with-nltk/&quot;&gt;Markus Konrads Beitrag auf datascience.blog.wzb.eu&lt;/a&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id=&quot;fn:2&quot;&gt;
-      &lt;p&gt;http://blog.alejandronolla.com/2013/05/15/detecting-text-language-with-python-and-nltk/ &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;a href=&quot;http://blog.alejandronolla.com/2013/05/15/detecting-text-language-with-python-and-nltk/&quot;&gt;Alejandro Nollas Blog&lt;/a&gt; &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
@@ -283,14 +305,15 @@ UNION
    <link href="https://mazzefrie.github.io//2018/04/16/historiker-als-netzwerk/"/>
    <updated>2018-04-16T00:00:00+02:00</updated>
    <id>https://mazzefrie.github.io//2018/04/16/historiker-als-netzwerk</id>
-   <content type="html">&lt;p&gt;Über Historiker gibt es innerhalb der Historiker eine Reihe von &lt;em&gt;gefühlte Wahrheiten&lt;/em&gt; oder Wissen, dass rein auf Erfahrung beruht: Es gäbe Rezensions- oder Tagungscliquen, wenig austausch zwischen verschiedenen speziellen Unterdisziplinen und dergleichen. Aber stimmt das auch so?&lt;/p&gt;
+   <content type="html">&lt;p&gt;Über Historiker gibt es unter den Historiker eine Reihe von &lt;em&gt;gefühlte Wahrheiten&lt;/em&gt; oder Wissen, dass rein auf Erfahrungen beruht: Es gäbe Rezensions- oder Tagungscliquen, wenig Austausch zwischen verschiedenen speziellen Unterdisziplinen und dergleichen. Aber stimmt das auch?&lt;/p&gt;
 
-&lt;p&gt;Über die Analyse eines großen Datensets aus Konfernzberichte, aber auch Rezensionen oder Stellenanzeigen, so meine These, können diesen &lt;em&gt;gefühlten Wahrheiten&lt;/em&gt; mehr oder eben auch weniger Substanz verliehen werden. Viele der Ergebnisse werden vermutlich nicht überraschen, wohl aber durch Zahlen verdeutlicht.&lt;/p&gt;
+&lt;p&gt;Über die Analyse eines großen Datensets aus Konferenzberichte, aber auch Rezensionen oder Stellenanzeigen, so meine These, können diesen &lt;em&gt;gefühlten Wahrheiten&lt;/em&gt; mehr oder eben auch weniger Substanz verliehen werden. Viele der Ergebnisse werden vermutlich nicht überraschen, wohl aber durch Zahlen greifbarer.&lt;/p&gt;
+
+&lt;p class=&quot;message&quot;&gt;Die Idee für das Projekt stammt aus einer Übung von &lt;a href=&quot;https://www.uni-muenster.de/Geschichte/histsem/JPGHuSMA/personen/hiltmann/index.html&quot;&gt;Thorsten Hiltmann&lt;/a&gt; an der WWU Münster im SS 2018&lt;/p&gt;
 
 &lt;nav class=&quot;toc&quot;&gt;
   &lt;h4&gt;Inhalt&lt;/h4&gt;
 &lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#erstellung-des-daten-und-quellenkorpus&quot; id=&quot;markdown-toc-erstellung-des-daten-und-quellenkorpus&quot;&gt;Erstellung des Daten und Quellenkorpus&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#die-quellen&quot; id=&quot;markdown-toc-die-quellen&quot;&gt;Die Quellen&lt;/a&gt;    &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#konferenzberichte-als-quelle&quot; id=&quot;markdown-toc-konferenzberichte-als-quelle&quot;&gt;Konferenzberichte als Quelle&lt;/a&gt;        &lt;ul&gt;
           &lt;li&gt;&lt;a href=&quot;#welche-fragen-knnte-man-mit-diesen-informationen-stellen&quot; id=&quot;markdown-toc-welche-fragen-knnte-man-mit-diesen-informationen-stellen&quot;&gt;Welche Fragen könnte man mit diesen Informationen stellen?&lt;/a&gt;&lt;/li&gt;
@@ -303,26 +326,15 @@ UNION
       &lt;li&gt;&lt;a href=&quot;#stellenanzeigen-als-quelle&quot; id=&quot;markdown-toc-stellenanzeigen-als-quelle&quot;&gt;Stellenanzeigen als Quelle&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#erstellung-des-daten-und-quellenkorpus&quot; id=&quot;markdown-toc-erstellung-des-daten-und-quellenkorpus&quot;&gt;Erstellung des Daten und Quellenkorpus&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;/nav&gt;
 
-&lt;h2 id=&quot;erstellung-des-daten-und-quellenkorpus&quot;&gt;Erstellung des Daten und Quellenkorpus&lt;/h2&gt;
-
-&lt;p&gt;Um diese Daten automatisiert auswerten zu können, müssen sie maschinenlesbar vorhanden sein. Von daher fallen zunächst sämtliche Druckmedien heraus.&lt;/p&gt;
-
-&lt;p&gt;Zum Glück gibt es verschiedene Online-Portale, allen voran HSozKult oder Sehepunkte aus denen sich die entsprechenden Daten herauslesen lassen. Ebenso bieten Google Scholar und JStor bereits für diesen Zweck geschaffene open data-Schnittstellen an, auf die man zurückgreifen könnte.&lt;/p&gt;
-
-&lt;p&gt;Den zunächst aber direkten und eingängigsten Zugang bietet zunächst das Portal HSozKult als wichtige Anlaufstelle für viele Historiker. Die URLs der Tagungsberichte sind über eine aufsteigenden ID leicht abrufbar und bedarf keines aufwendigen crawlings.&lt;/p&gt;
-
-&lt;p&gt;Python bietet für diesen Zweck eine Reihe von Bibliotheken, wie pandas, networkx und nltk, die helfen diese Daten im Juypter Notebook auszuwerten und ebenso zur Visualisierung, wie matplotlib, bokeh oder plotly. Und nicht zuletzt für die Sammlung von Daten scrapy oder auch eine Kombination aus requests und BeautifulSoup.&lt;/p&gt;
-
 &lt;h2 id=&quot;die-quellen&quot;&gt;Die Quellen&lt;/h2&gt;
 
 &lt;h3 id=&quot;konferenzberichte-als-quelle&quot;&gt;Konferenzberichte als Quelle&lt;/h3&gt;
-&lt;p&gt;Konferenzen, Workshops und Tagungen sind ein wichtiger Bestandteil der Arbeit eines Historikers.&lt;/p&gt;
-
-&lt;p&gt;Sie sind ein wichtiger Kontenpunkt an dem sich die Wissenschaftler treffen. Konferenzen orientieren sich in der Regel an einem mehr oder weniger eng umrissenen Thema und sind häufig auf bestimmte Epochen begrenzt. Dementsprechend lassen sich so über Konferenzberichte verbindungen zwischen Personen, Orten und Themen herstellen und identifizieren: Wer war wann mit wem zu welchem Thema auf welcher Konferenz? (siehe dazu &lt;a href=&quot;/2018/04/17/konferenzbericht-quelle-daten/&quot;&gt;Konferenzbericht als Datenquelle&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;Konferenzen, Workshops und Tagungen sind ein wichtiger Bestandteil der Arbeit eines Historikers. Sie sind ein wichtiger Kontenpunkt an dem sich die Wissenschaftler treffen. Konferenzen orientieren sich in der Regel an einem mehr oder weniger eng umrissenen Thema und sind häufig auf bestimmte Epochen begrenzt. Dementsprechend lassen sich so über Konferenzberichte verbindungen zwischen Personen, Orten und Themen herstellen und identifizieren: Wer war wann mit wem zu welchem Thema auf welcher Konferenz? (siehe dazu &lt;a href=&quot;/2018/04/17/konferenzbericht-quelle-daten/&quot;&gt;Konferenzbericht als Datenquelle&lt;/a&gt;)&lt;/p&gt;
 
 &lt;h4 id=&quot;welche-fragen-knnte-man-mit-diesen-informationen-stellen&quot;&gt;Welche Fragen könnte man mit diesen Informationen stellen?&lt;/h4&gt;
 
@@ -331,14 +343,15 @@ UNION
   &lt;li&gt;Welcher Wissenschaftler ist am besten “vernetzt”?&lt;/li&gt;
   &lt;li&gt;In welcher Stadt waren die meisten Konferenzen?&lt;/li&gt;
   &lt;li&gt;Wie dicht ist das Netzwerk der Wissenschaftler?&lt;/li&gt;
-  &lt;li&gt;Wie verteilen sich die Themen und Epochen über die Zeit?
-Leider ist der Zeitraum mit knapp 10 Jahren dafür relativ kurz.&lt;/li&gt;
+  &lt;li&gt;Wie verteilen sich die Themen und Epochen über die Zeit?&lt;/li&gt;
   &lt;li&gt;Lassen sich “Communities” identifizieren? Wie sind diese untereinander vernetzt?&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Zwischen den einzelnen Fragen ließen sich auch querverbindungen herstellen: Wie verteilen sich die identifizierten Communities geografisch? Welche Themen sind an welchen Orten bliebt?&lt;/p&gt;
+&lt;p&gt;Zwischen den einzelnen Fragen lassen sich auch querverbindungen herstellen: Wie verteilen sich die identifizierten Communities geografisch? Welche Themen sind an welchen Orten bliebt?&lt;/p&gt;
 
 &lt;h3 id=&quot;rezensionen-als-quelle&quot;&gt;Rezensionen als Quelle&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;TODO&lt;/em&gt;&lt;/p&gt;
+
 &lt;p&gt;Rezension bilden eine weitere wichtige Quelle für die Untersuchung des Historiker-Netzwerks.&lt;/p&gt;
 
 &lt;h4 id=&quot;welche-fragen-knnte-man-mit-diesen-informationen-stellen-1&quot;&gt;Welche Fragen könnte man mit diesen Informationen stellen?&lt;/h4&gt;
@@ -348,6 +361,14 @@ Leider ist der Zeitraum mit knapp 10 Jahren dafür relativ kurz.&lt;/li&gt;
 
 &lt;h3 id=&quot;stellenanzeigen-als-quelle&quot;&gt;Stellenanzeigen als Quelle&lt;/h3&gt;
 &lt;p&gt;&lt;em&gt;TODO&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;erstellung-des-daten-und-quellenkorpus&quot;&gt;Erstellung des Daten und Quellenkorpus&lt;/h2&gt;
+
+&lt;p&gt;Derartige Quellen sind über verschiedene Ressourcen zugänglich. Über das Portal HSozKult sind sowohl Konferenzberichte, Rezensionen als auch Stellenanzeigen im HTML-Format aufrufbar. Leider ist der Zeitraum relativ kurz, daher lassen sich keine umfassenden Trends oder Entwicklungen feststellen. Ebenso bieten Google Scholar und JStor bereits für diesen Zweck geschaffene open data-Schnittstellen an, auf die man zurückgreifen könnte.&lt;/p&gt;
+
+&lt;p&gt;Der einfachste Weg die Daten zu beschaffen, scheint jedoch zunächst HSozKult zu sein: Die URLs der Tagungsberichte sind über eine aufsteigenden ID leicht abrufbar und bedarf keines aufwendigen crawlings. Das Zusammenstellen der Daten ist daher nur mit geringem Aufwand verbunden. Allerdings bieten die Texte kaum semantischen Mehrwert. Die Normalisierung und Extraktion von Daten bedarf daher einer komplexeren Vorgehensweise.&lt;/p&gt;
+
+&lt;p&gt;Python bietet für diesen Zweck eine Reihe von Bibliotheken, wie pandas, networkx und nltk, die helfen diese Daten im Juypter Notebook auszuwerten und ebenso zur Visualisierung, wie matplotlib, bokeh oder plotly. Und nicht zuletzt für die Sammlung von Daten scrapy oder auch eine Kombination aus requests und BeautifulSoup.&lt;/p&gt;
 </content>
  </entry>
  

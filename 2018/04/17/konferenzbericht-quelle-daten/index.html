@@ -36,7 +36,30 @@
         <article class="post">
   <h1 class="post-title">Historiker als soziales Netzwerk - Konferenzberichte als (Daten-)Quelle</h1>
   <time datetime="2018-04-17T00:00:00+02:00" class="post-date">17 Apr 2018</time>
-  <p>Die Konferenzberichte von HSozKult weisen zunächst nur bedingt Anhaltspunkte auf mit deren Hife sich Metadaten identifizieren ließen. Allerdings erkennt man im Quelltext durchaus einen regelhaften Aufbau: Mit CSS-Klassen wie <em>hfn-item-key</em> oder <em>metaBlock</em> und <em>metaBlockKey</em> sowie den dem Geschwister oder Eltern-Selektor können identifiziert werden. Auf Basis der CSS-Klassen lassen sich die Daten jeweils Ort, Name und Datum der Konferenz auslesen, ebenso der Autor des Berichts sowie die vergeben Schlagworte.</p>
+  <p>Die Tagungsberichte von HSozKult enthalten neben einer umfassenden Zusammenfassung der Vorträge viele nützliche Informationen: Name und Ursprung des Berichts, Thema, Zeit und Ort der Konferenz, Namen und Herkunftsorte der Referenten sowie durch die Redakteure vergeben Schlagworte für die Epochen und Themenbereiche der Veranstaltung. Die meisten dieser Daten lassen sich regelhaft auslesen.</p>
+
+<nav class="toc">
+  <h4>Inhalt</h4>
+<ul id="markdown-toc">
+  <li><a href="#lesen-und-normalisierung-der-daten" id="markdown-toc-lesen-und-normalisierung-der-daten">Lesen und Normalisierung der Daten</a></li>
+  <li><a href="#part-of-speech-zur-identifikation-der-teilnehmer" id="markdown-toc-part-of-speech-zur-identifikation-der-teilnehmer">Part-of-Speech zur Identifikation der Teilnehmer</a></li>
+  <li><a href="#probleme" id="markdown-toc-probleme">Probleme</a>    <ul>
+      <li><a href="#teilnehmer-pro-konferenz-im-jahresdurchschnitt-stand-vom-28042018" id="markdown-toc-teilnehmer-pro-konferenz-im-jahresdurchschnitt-stand-vom-28042018">Teilnehmer pro Konferenz im Jahresdurchschnitt, Stand vom 28.04.2018:</a></li>
+    </ul>
+  </li>
+  <li><a href="#die-datenstze" id="markdown-toc-die-datenstze">Die Datensätze</a>    <ul>
+      <li><a href="#liste-der-konferenzen" id="markdown-toc-liste-der-konferenzen">Liste der Konferenzen</a></li>
+      <li><a href="#liste-der-teilnehmer" id="markdown-toc-liste-der-teilnehmer">Liste der Teilnehmer</a></li>
+    </ul>
+  </li>
+  <li><a href="#nchste-schritte" id="markdown-toc-nchste-schritte">Nächste Schritte</a></li>
+  <li><a href="#link-zum-aktuellen-gist" id="markdown-toc-link-zum-aktuellen-gist">Link zum aktuellen Gist</a></li>
+</ul>
+
+</nav>
+
+<h2 id="lesen-und-normalisierung-der-daten">Lesen und Normalisierung der Daten</h2>
+<p>Die Konferenzberichte von HSozKult weisen zunächst nur bedingt Anhaltspunkte auf mit deren Hife sich Metadaten identifizieren ließen. Allerdings erkennt man im Quelltext durchaus einen regelhaften Aufbau: Mit CSS-Klassen wie <em>hfn-item-key</em> oder <em>metaBlock</em> und <em>metaBlockKey</em> sowie den dem Geschwister oder Eltern-Selektor können identifiziert werden. Auf Basis der CSS-Klassen lassen sich die Daten jeweils Ort, Name und Datum der Konferenz auslesen, ebenso der Autor des Berichts sowie die vergeben Schlagworte.</p>
 
 <h2 id="part-of-speech-zur-identifikation-der-teilnehmer">Part-of-Speech zur Identifikation der Teilnehmer</h2>
 <p>Der Text des Berichts selbst jedoch besteht aus nicht semantischem HTML. Daten aus diesem Berich zu extrahieren bedarf also eines größeren Aufwands. Mit Hilfe er <em>nltk</em>-Bibliothek lässt sich der Text zunächst in tokens zerlegen und eine part-of-speech-Erkennung durchführen. <em>nltk</em> wird jedoch zunächst nur mit einem englischen Model geliefert und daher muss zunächst ein entsprechendes Model für die deutsche Sprache geladen werden.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
@@ -52,7 +75,7 @@
 	tagged = tagger.tag(tokens)
 </code></pre>
 
-<p>Damit erhalt man einen entsprechenden Graphen, in dem die jeweilien Tokens in ihrer Funktion im Satz identifiziert wurden. Dabei konnten Tokens als Namen identifiziert werden. Allerdings wird dabei noch nicht zwischen Vor- und Nachnamen oder gar Orts- und funktionalen Namen (“Universität”) unterschieden.  Es zeigt sich jedoch, dass in der Mehrheit der Berichte die redaktionelle Konvention besteht, die Namen von Rednern in Großbuchstaben gefolgt von dem Ortnamen darzustellen:</p>
+<p>Damit erhalt man einen entsprechenden Graphen, in dem die jeweilien Tokens in ihrer Funktion im Satz identifiziert wurden. Dabei konnten Tokens als Namen identifiziert werden. Allerdings wird dabei noch nicht zwischen Vor- und Nachnamen oder gar Orts- und funktionalen Namen (“Universität”) unterschieden. Es zeigt sich jedoch, dass in der Mehrheit der Berichte die redaktionelle Konvention besteht, die Namen von Rednern in Großbuchstaben gefolgt von dem Ortnamen darzustellen:</p>
 
 <blockquote>
   <p>MATTHIAS FRIEDMANN (Münster) stellte in seinem Vortrag die wichtige kommunikative Funktion von Informationen dar.</p>
@@ -72,7 +95,7 @@
             pass        
 </code></pre>
 
-<p>Sicherlich gäbe es dafür auch eine elegantere Lösung.</p>
+<p>Sicherlich gäbe es dafür auch eine elegantere Lösung. Prinzipiell könnte dies auch mit regulären Ausdrücken umgesetzt werden.</p>
 
 <p>Einige Fehler traten dabei auf, wenn mehrere Namen in Folge aufgelistet und nicht deutlich getrennt wurden, bei Namen die aus mehr als zwei Bausteinen (beispielsweise Namen mit “van” oder abgekürztem Zweitnamen) bestehen sowie schließlich Namen, bei denen die Konvention in Großbuchstaben zu schreiben nicht eingehalten wurden, was bei einem Teil der Berichte der Fall ist.</p>
 
@@ -81,21 +104,21 @@
 
 <ul>
   <li>
-    <p>Manche Konferenzberichte waren jedoch auf Englisch geschrieben und der deutsche Tagger konnte daher die Namen nicht erkennen. Es bedarf also zusätzlich einer Spracherkennung<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup></p>
+    <p>Manche Konferenzberichte waren auf Englisch geschrieben und der deutsche Tagger konnte daher die Namen nicht immer erkennen. Es bedurfte also zusätzlich einer Spracherkennung<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup></p>
   </li>
   <li>
-    <p>Schrägstriche zwischen Namen führten dazu, dass Namen nicht auseinandergehalten werden konnten. Ebenso wurden FREIBURG/ KIEL oder HEIDELBERG/ LONDON als ein Name erkannt.</p>
+    <p>Schrägstriche zwischen Namen führten dazu, dass diese nicht auseinandergehalten werden konnten. Ebenso wurden FREIBURG/ KIEL oder HEIDELBERG/ LONDON als Name erkannt.</p>
   </li>
   <li>
-    <p>Der Tagger hatte Probleme mit osteuropäischen Namen, besonders wenn sie Akkzente enthielten. Ich habe diese daher schlicht entfernt</p>
+    <p>Der Tagger hatte Probleme mit osteuropäischen Namen, besonders wenn sie Akkzente enthielten. Ich habe diese daher schlicht entfernt.</p>
   </li>
   <li>
     <p>BeautifulSoup hat in der full_text()-Funktion keine Leerzeichen nach Absätzen gelassen. Fing ein neuer Absatz mit einem Namen an, konnte der Tokenizer keine Trennung identifizieren.</p>
   </li>
 </ul>
 
-<p>Stand am 28.04.2018: 
-<img src="/images/avg-part-2804.png" alt="Durchschnittliche Konferenzgröße" />
+<h3 id="teilnehmer-pro-konferenz-im-jahresdurchschnitt-stand-vom-28042018">Teilnehmer pro Konferenz im Jahresdurchschnitt, Stand vom 28.04.2018:</h3>
+<p><img src="/images/avg-part-2804.png" alt="Durchschnittliche Konferenzgröße" />
 2323 Konferenzen mit weniger als 9 Teilnehmern: 8: 392, 7: 379, 6: 374, 5: 332, 4: 294, 3: 209, 1: 189, 2: 154</p>
 
 <h2 id="die-datenstze">Die Datensätze</h2>
@@ -128,18 +151,17 @@
 <p>Dieser Datensatz kann nun weiter verarbeitet werden um beispielsweise ein soziales Netzwerk mit Gephi darzustellen.</p>
 
 <h2 id="link-zum-aktuellen-gist">Link zum aktuellen Gist</h2>
-<ul>
-  <li><a href="https://gist.github.com/mazzefrie/ab420fd691bb0c35820102aa633631d1">extract_data.py</a></li>
-</ul>
+<p>Ich habe einige Ansätze zum weiteren Ausbau des Skripts vorgesehen, da aufgrund der vielen Fehler mehrere druchläufe notwendig wurden und werden.
+* <a href="https://gist.github.com/mazzefrie/ab420fd691bb0c35820102aa633631d1">extract_data.py</a></p>
 
 <hr />
 <div class="footnotes">
   <ol>
     <li id="fn:1">
-      <p>Mit Hilfe des Tiger-Korpus lässt sich ein entsprechendes Model trainieren, siehe https://datascience.blog.wzb.eu/2016/07/13/accurate-part-of-speech-tagging-of-german-texts-with-nltk/ <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+      <p>Mit Hilfe des Tiger-Korpus lässt sich ein entsprechendes Model trainieren, siehe <a href="https://datascience.blog.wzb.eu/2016/07/13/accurate-part-of-speech-tagging-of-german-texts-with-nltk/">Markus Konrads Beitrag auf datascience.blog.wzb.eu</a> <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:2">
-      <p>http://blog.alejandronolla.com/2013/05/15/detecting-text-language-with-python-and-nltk/ <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+      <p><a href="http://blog.alejandronolla.com/2013/05/15/detecting-text-language-with-python-and-nltk/">Alejandro Nollas Blog</a> <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
     </li>
   </ol>
 </div>
@@ -180,7 +202,7 @@
 
       <footer class="footer">
         <small>
-          &copy; <time datetime="2018-04-29T15:42:36+02:00">2018</time>. All rights reserved.
+          &copy; <time datetime="2018-04-29T16:47:45+02:00">2018</time>. All rights reserved.
         </small>
       </footer>
     </div>
