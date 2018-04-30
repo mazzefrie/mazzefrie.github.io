@@ -6,8 +6,8 @@
 </description>
     <link>https://mazzefrie.github.io//</link>
     <atom:link href="https://mazzefrie.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 30 Apr 2018 18:09:53 +0200</pubDate>
-    <lastBuildDate>Mon, 30 Apr 2018 18:09:53 +0200</lastBuildDate>
+    <pubDate>Mon, 30 Apr 2018 18:23:07 +0200</pubDate>
+    <lastBuildDate>Mon, 30 Apr 2018 18:23:07 +0200</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -257,7 +257,7 @@ UNION
 &lt;p&gt;&lt;strong&gt;Stand vom 30.04.2018:&lt;/strong&gt;
 &lt;img src=&quot;/images/avg-part-3004.png&quot; alt=&quot;Durchschnittliche Konferenzgröße&quot; /&gt;
 9: 342, 8: 263, 7: 256, 6: 208, 5: 162, 4: 109, 3: 60, 2: 62, 1: 186
-Einige Fehler ließen sich offenbar beheben. Sehr auffällig ist jedoch, dass die Anzahl von Konferenzen mit nur einem vermeintlichen Teilnehmer praktisch nicht gesunken ist.&lt;/p&gt;
+Einige Fehler ließen sich offenbar beheben. Sehr auffällig ist jedoch, dass die Anzahl von Konferenzen mit nur einem vermeintlichen Teilnehmer praktisch nicht gesunken ist.&lt;sup id=&quot;fnref:3&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;die-datenstze&quot;&gt;Die Datensätze&lt;/h2&gt;
 &lt;p&gt;Auf Basis dieser Vorgehensweise lassen sich schließlich zwei Datensätze generieren:&lt;/p&gt;
@@ -300,6 +300,9 @@ Einige Fehler ließen sich offenbar beheben. Sehr auffällig ist jedoch, dass di
     &lt;/li&gt;
     &lt;li id=&quot;fn:2&quot;&gt;
       &lt;p&gt;&lt;a href=&quot;http://blog.alejandronolla.com/2013/05/15/detecting-text-language-with-python-and-nltk/&quot;&gt;Alejandro Nollas Blog&lt;/a&gt; &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:3&quot;&gt;
+      &lt;p&gt;Einer anderen Darstellung der Daten nach scheint dies besonders bis 2008 aufgetreten zu sein. Vermutlich besteht erst seit dem die Konvention die Redner in Großbuchstaben einzutragen. In der Darstellung sieht man euch deutlich die alle zwei Jahre statt findenden Historikertage&lt;a href=&quot;/images/part-full-avg-3004.png&quot;&gt;&lt;img src=&quot;/images/part-full-avg-3004.png&quot; alt=&quot;Volle Darstellung&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
