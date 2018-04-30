@@ -6,8 +6,8 @@
 </description>
     <link>https://mazzefrie.github.io//</link>
     <atom:link href="https://mazzefrie.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 29 Apr 2018 16:49:42 +0200</pubDate>
-    <lastBuildDate>Sun, 29 Apr 2018 16:49:42 +0200</lastBuildDate>
+    <pubDate>Mon, 30 Apr 2018 18:09:53 +0200</pubDate>
+    <lastBuildDate>Mon, 30 Apr 2018 18:09:53 +0200</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -175,7 +175,7 @@ UNION
   &lt;li&gt;&lt;a href=&quot;#lesen-und-normalisierung-der-daten&quot; id=&quot;markdown-toc-lesen-und-normalisierung-der-daten&quot;&gt;Lesen und Normalisierung der Daten&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#part-of-speech-zur-identifikation-der-teilnehmer&quot; id=&quot;markdown-toc-part-of-speech-zur-identifikation-der-teilnehmer&quot;&gt;Part-of-Speech zur Identifikation der Teilnehmer&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#probleme&quot; id=&quot;markdown-toc-probleme&quot;&gt;Probleme&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#teilnehmer-pro-konferenz-im-jahresdurchschnitt-stand-vom-28042018&quot; id=&quot;markdown-toc-teilnehmer-pro-konferenz-im-jahresdurchschnitt-stand-vom-28042018&quot;&gt;Teilnehmer pro Konferenz im Jahresdurchschnitt, Stand vom 28.04.2018:&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#teilnehmer-pro-konferenz-im-jahresdurchschnitt&quot; id=&quot;markdown-toc-teilnehmer-pro-konferenz-im-jahresdurchschnitt&quot;&gt;Teilnehmer pro Konferenz im Jahresdurchschnitt&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#die-datenstze&quot; id=&quot;markdown-toc-die-datenstze&quot;&gt;Die Datensätze&lt;/a&gt;    &lt;ul&gt;
@@ -248,9 +248,16 @@ UNION
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;teilnehmer-pro-konferenz-im-jahresdurchschnitt-stand-vom-28042018&quot;&gt;Teilnehmer pro Konferenz im Jahresdurchschnitt, Stand vom 28.04.2018:&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/images/avg-part-2804.png&quot; alt=&quot;Durchschnittliche Konferenzgröße&quot; /&gt;
-2323 Konferenzen mit weniger als 9 Teilnehmern: 8: 392, 7: 379, 6: 374, 5: 332, 4: 294, 3: 209, 1: 189, 2: 154&lt;/p&gt;
+&lt;h3 id=&quot;teilnehmer-pro-konferenz-im-jahresdurchschnitt&quot;&gt;Teilnehmer pro Konferenz im Jahresdurchschnitt&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Stand vom 28.04.2018:&lt;/strong&gt;
+&lt;img src=&quot;/images/avg-part-2804.png&quot; alt=&quot;Durchschnittliche Konferenzgröße&quot; /&gt;
+2323 Konferenzen mit weniger als 9 Teilnehmern: 8: 392, 7: 379, 6: 374, 5: 332, 4: 294, 3: 209, 2: 154, 1: 189&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Stand vom 30.04.2018:&lt;/strong&gt;
+&lt;img src=&quot;/images/avg-part-3004.png&quot; alt=&quot;Durchschnittliche Konferenzgröße&quot; /&gt;
+9: 342, 8: 263, 7: 256, 6: 208, 5: 162, 4: 109, 3: 60, 2: 62, 1: 186
+Einige Fehler ließen sich offenbar beheben. Sehr auffällig ist jedoch, dass die Anzahl von Konferenzen mit nur einem vermeintlichen Teilnehmer praktisch nicht gesunken ist.&lt;/p&gt;
 
 &lt;h2 id=&quot;die-datenstze&quot;&gt;Die Datensätze&lt;/h2&gt;
 &lt;p&gt;Auf Basis dieser Vorgehensweise lassen sich schließlich zwei Datensätze generieren:&lt;/p&gt;
