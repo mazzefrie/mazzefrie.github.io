@@ -6,8 +6,8 @@
 </description>
     <link>https://mazzefrie.github.io//</link>
     <atom:link href="https://mazzefrie.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 30 Apr 2018 18:23:07 +0200</pubDate>
-    <lastBuildDate>Mon, 30 Apr 2018 18:23:07 +0200</lastBuildDate>
+    <pubDate>Tue, 01 May 2018 13:06:49 +0200</pubDate>
+    <lastBuildDate>Tue, 01 May 2018 13:06:49 +0200</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -161,6 +161,47 @@ UNION
         <pubDate>Tue, 17 Apr 2018 00:00:00 +0200</pubDate>
         <link>https://mazzefrie.github.io//2018/04/17/sparql-karte/</link>
         <guid isPermaLink="true">https://mazzefrie.github.io//2018/04/17/sparql-karte/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Historiker im sozialer Graph</title>
+        <description>&lt;p&gt;Auf Basis der Daten die ich &lt;a href=&quot;/2018/04/17/konferenzbericht-quelle-daten/&quot;&gt;entsprechend extrahiert habe&lt;/a&gt; ließ sich im nächsten Schritt eine Liste der Knoten und eine Liste der Kanten erzeugen.&lt;/p&gt;
+
+&lt;p&gt;Der Graph zeigt auf Basis dieser Daten zweierlei: Zum einen sind dort Konferenzen zu sehen, zum anderen die Teilnehmer von Konferenzen. Konkret lässt sich daran erkennen, welche Konferenzen gut besucht waren sowie welche Historiker besonders häufig auf verschiedenen Konferenzen vertreten war.&lt;/p&gt;
+
+&lt;p&gt;Der Graph ist deutlich reduziert: Da die Anzahl der Personen, die nur einmal oder wenige male erwähnt wurden, &lt;a href=&quot;&quot;&gt;viel zu hoch ist&lt;/a&gt;. Ich habe nur Personen eingetragen, die auf mindestens 10 Konferenzen waren,&lt;/p&gt;
+
+&lt;p&gt;Die Liste der Kanten:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-csv&quot;&gt;ID,Source,Target,Type
+0,person0,conf7244,Undirected
+34,person34,conf4084,Undirected
+35,person35,conf7233,Undirected
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Die Liste der Knoten:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-csv&quot;&gt;Key,Id,Label,Cat
+0,conf7244,Wer ist Opfer des Na-7244,Conferences
+1,conf1973,&quot;Krakau, Prag und Wie-1973&quot;,Conferences
+30923,person36729,MATTHIAS FRIEDMANN,Person
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/hsoz-graph-04.jpg&quot; alt=&quot;Konferenzen im sozialen Graph mit Communities&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Die Einstellung für Beschriftungen sind mir leider noch nicht gelungen. Aber man erkennt relativ deutlich unterschiedliche Gruppen: Im oberen Bereich ist die Mediävistik abgebildet, der Bereich mittig, rechts bildet sich aus den Frühe Neuzeit-Historikern und der große Block unten links sind die Zeithistoriker. Darunter lassen sich noch weitere Gemeinschaften identifizieren: Dabei scheint es sich einerseits um die Landes- und Wirtschaftsgeschichte zu handeln, die auf der linken Seite teilweise Brücken zwischen den Epochen gebildet haben.&lt;/p&gt;
+
+&lt;p&gt;Ebenso scheinen die Überschneidungen zwischen Mittelalter und Früher Neuzeit stärker, als zwischen der Zeitgeschichte und der Frühen Neuzeit.&lt;/p&gt;
+
+&lt;p&gt;Die Communities unten rechts kann ich noch nicht ganz klar Identifizieren: Es scheint sich jedoch um Konferenzen mit einem Schwerpunkt in österreichischer und osteuropäischer Geschichte zu handeln.&lt;!-- 
+ post_url 2018-04-17-konferenzberichte-daten %}
+ --&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 17 Apr 2018 00:00:00 +0200</pubDate>
+        <link>https://mazzefrie.github.io//2018/04/17/konferenzberichte-graph/</link>
+        <guid isPermaLink="true">https://mazzefrie.github.io//2018/04/17/konferenzberichte-graph/</guid>
         
         
       </item>

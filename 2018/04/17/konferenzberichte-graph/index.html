@@ -7,7 +7,7 @@
 
   <title>
     
-      404: Page not found &middot; Matthias Friedmann
+      Historiker im sozialer Graph &middot; Matthias Friedmann
     
   </title>
 
@@ -33,10 +33,72 @@
       </header>
 
       <main>
-        <div class="page">
-  <h1 class="page-title">404: Page not found</h1>
-  <p class="lead">Sorry, we've misplaced that URL or it's pointing to something that doesn't exist. <a href="/">Head back home</a> to try finding it again.</p>
-</div>
+        <article class="post">
+  <h1 class="post-title">Historiker im sozialer Graph</h1>
+  <time datetime="2018-04-17T00:00:00+02:00" class="post-date">17 Apr 2018</time>
+  <p>Auf Basis der Daten die ich <a href="/2018/04/17/konferenzbericht-quelle-daten/">entsprechend extrahiert habe</a> ließ sich im nächsten Schritt eine Liste der Knoten und eine Liste der Kanten erzeugen.</p>
+
+<p>Der Graph zeigt auf Basis dieser Daten zweierlei: Zum einen sind dort Konferenzen zu sehen, zum anderen die Teilnehmer von Konferenzen. Konkret lässt sich daran erkennen, welche Konferenzen gut besucht waren sowie welche Historiker besonders häufig auf verschiedenen Konferenzen vertreten war.</p>
+
+<p>Der Graph ist deutlich reduziert: Da die Anzahl der Personen, die nur einmal oder wenige male erwähnt wurden, <a href="">viel zu hoch ist</a>. Ich habe nur Personen eingetragen, die auf mindestens 10 Konferenzen waren,</p>
+
+<p>Die Liste der Kanten:</p>
+
+<pre><code class="language-csv">ID,Source,Target,Type
+0,person0,conf7244,Undirected
+34,person34,conf4084,Undirected
+35,person35,conf7233,Undirected
+</code></pre>
+
+<p>Die Liste der Knoten:</p>
+
+<pre><code class="language-csv">Key,Id,Label,Cat
+0,conf7244,Wer ist Opfer des Na-7244,Conferences
+1,conf1973,"Krakau, Prag und Wie-1973",Conferences
+30923,person36729,MATTHIAS FRIEDMANN,Person
+</code></pre>
+
+<p><img src="/images/hsoz-graph-04.jpg" alt="Konferenzen im sozialen Graph mit Communities" /></p>
+
+<p>Die Einstellung für Beschriftungen sind mir leider noch nicht gelungen. Aber man erkennt relativ deutlich unterschiedliche Gruppen: Im oberen Bereich ist die Mediävistik abgebildet, der Bereich mittig, rechts bildet sich aus den Frühe Neuzeit-Historikern und der große Block unten links sind die Zeithistoriker. Darunter lassen sich noch weitere Gemeinschaften identifizieren: Dabei scheint es sich einerseits um die Landes- und Wirtschaftsgeschichte zu handeln, die auf der linken Seite teilweise Brücken zwischen den Epochen gebildet haben.</p>
+
+<p>Ebenso scheinen die Überschneidungen zwischen Mittelalter und Früher Neuzeit stärker, als zwischen der Zeitgeschichte und der Frühen Neuzeit.</p>
+
+<p>Die Communities unten rechts kann ich noch nicht ganz klar Identifizieren: Es scheint sich jedoch um Konferenzen mit einem Schwerpunkt in österreichischer und osteuropäischer Geschichte zu handeln.<!-- 
+ post_url 2018-04-17-konferenzberichte-daten %}
+ --></p>
+
+</article>
+
+
+<aside class="related">
+  <h3>Related posts</h3>
+  <ul class="related-posts">
+    
+      <li>
+        <a href="/2018/04/29/konferenzberichte-karte/">
+          Historiker als soziales Netzwerk - eine schnelle Karte
+          <small><time datetime="2018-04-29T00:00:00+02:00">29 Apr 2018</time></small>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/2018/04/17/sparql-karte/">
+          Fingerübung in SPARQL - Geburtsorte deutscher Schriftsteller
+          <small><time datetime="2018-04-17T00:00:00+02:00">17 Apr 2018</time></small>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/2018/04/17/konferenzbericht-quelle-daten/">
+          Historiker als soziales Netzwerk - Konferenzberichte als (Daten-)Quelle
+          <small><time datetime="2018-04-17T00:00:00+02:00">17 Apr 2018</time></small>
+        </a>
+      </li>
+    
+  </ul>
+</aside>
+
 
       </main>
 
