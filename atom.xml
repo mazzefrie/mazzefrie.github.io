@@ -4,13 +4,54 @@
  <title>Matthias Friedmann</title>
  <link href="https://mazzefrie.github.io//atom.xml" rel="self"/>
  <link href="https://mazzefrie.github.io//"/>
- <updated>2018-05-01T16:43:03+02:00</updated>
+ <updated>2018-05-01T20:34:05+02:00</updated>
  <id>https://mazzefrie.github.io/</id>
  <author>
    <name></name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Debattenanalyse: Zwischenrufe im Parlament</title>
+   <link href="https://mazzefrie.github.io//2018/04/30/zwischenrufe-im-parlament/"/>
+   <updated>2018-04-30T00:00:00+02:00</updated>
+   <id>https://mazzefrie.github.io//2018/04/30/zwischenrufe-im-parlament</id>
+   <content type="html">&lt;blockquote&gt;
+  &lt;p&gt;Das Parlament muss härter werden &lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Das Parlament ist heute der Veröffentlichung der Politik vorbehalten&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Im Parlament würde nicht mehr richtig, entsprechend eines demokratischen Ideals, gearbeitet werden. Entscheidungen würden nicht mehr im verbalen Kampf, sondern in verborgenen Hinterzimmer getroffen werden.&lt;/p&gt;
+
+&lt;p&gt;Stimmt das?&lt;/p&gt;
+
+&lt;p&gt;Meine Idee besteht darin die Plenarprotokolle des Bundestags auszuwerten: Da sind im prinzip alle seit 1949 in rein Text online verfügbar, einige sogar schon mit XML-Auszeichnung. Warum sollte man das aber machen und was würde man darin suchen?&lt;/p&gt;
+
+&lt;p&gt;Für die Frage könnte man dann hingehen und auswerten, wie sich die Häufigkeit der Zwischenrufe - die sind im Text ja mit protokolliert - im Laufe der Jahre verändert haben.&lt;/p&gt;
+
+&lt;p&gt;Man kann da natürlich noch viel mehr machen, z.B. könnte man mit Google News gucken, wie oft in Zeitungen Debatten erwähnt und zitiert werden, oder umgekehrt: Welche Themen sind erst in der Zeitung und dann im Parlament? Oder: Stimmt es wirklich, dass kritische Gesetze gerne zur Fußball-WM durchgewunken werden? uvm. Je nach Fragen könnte man also quasi alle drei Tracks, in jedem Fall aber WebDev und Data, involvieren. Abgesehen davon bieten auch der US-Kongress, das australische, kanadische und britische Unterhaus online Zugriff auf die Protokolle.&lt;/p&gt;
+
+&lt;p&gt;Das war tatsächlich Zufall aber die SZ hat das im Grunde für die aktuelle Legislaturperiode im Grunde genau so gemacht und vor wenigen Tag einen Artikel veröffentlicht: Es ist also machbar und mit der Idee wäre man also “vorne mit dabei”, hätte also öffentlichen und wissenschaftlichen Mehrwert. &lt;sup id=&quot;fnref:4&quot;&gt;&lt;a href=&quot;#fn:4&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;https://www.zeit.de/politik/deutschland/2017-09/bundestag-parlament-debatten-redner-5vor8 &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot;&gt;
+      &lt;p&gt;Roger Willemsen &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:4&quot;&gt;
+      &lt;p&gt;https://projekte.sueddeutsche.de/artikel/politik/die-afd-im-bundestag-e362724/ &lt;a href=&quot;#fnref:4&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Historiker als soziales Netzwerk - eine schnelle Karte</title>
@@ -446,6 +487,14 @@ Einige Fehler ließen sich offenbar beheben. Sehr auffällig ist jedoch, dass di
 &lt;/blockquote&gt;
 
 &lt;p&gt;Allein daher besteht ein gewisser Grund zum Zweifeln. Mit Hilfe von Daten-Auswertungen könnte man diese subjektiven Eindrücke untermauern oder widerlegen. Meine Idee wäre die Protokolle des Bundestags&lt;sup id=&quot;fnref:11&quot;&gt;&lt;a href=&quot;#fn:11&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;: auszuwerten und im besonderen Muster im Auftreten von Zwischenrufen zu ermitteln. Zwischenrufe spielen im Parlament eine wichtige Rolle &lt;sup id=&quot;fnref:4&quot;&gt;&lt;a href=&quot;#fn:4&quot; class=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt; und werden von den Stenographen notiert.&lt;/p&gt;
+
+&lt;p&gt;Nach einem ersten, kurzen Blick in die Daten zeigt sich aber eine gewisse Tendenz(&lt;a href=&quot;https://gist.github.com/mazzefrie/15b928808e9966ac66d9bc990288dd3d&quot;&gt;Gist&lt;/a&gt;):&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/zwischenrufe.png&quot; alt=&quot;Durchschnittliche Zwischenrufe im Jahresdurchschnitt&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Zumindest die Zahl der Einschübe hat im Lauf der Jahre zugenommen. Es gibt allerdings noch andere Gründe für den Anstieg:&lt;br /&gt;
+* Änderungen in der Stenographische Praxis&lt;br /&gt;
+* Der Bundestag ist insgesamt aktiver&lt;/p&gt;
 
 &lt;p&gt;Man kann da natürlich noch viel mehr machen, z.B. könnte man mit Google News gucken, wie oft in Zeitungen Debatten erwähnt und zitiert werden, oder umgekehrt: Welche Themen sind erst in der Zeitung und dann im Parlament? Oder: Stimmt es wirklich, dass kritische Gesetze gerne zur Fußball-WM durchgewunken werden? Ebenso bieten sich Methoden des Topic Modeling an um auch eine thematische Analyse einzuflechten.&lt;sup id=&quot;fnref:6&quot;&gt;&lt;a href=&quot;#fn:6&quot; class=&quot;footnote&quot;&gt;6&lt;/a&gt;&lt;/sup&gt; Bei welcher Art Themen gab es viele Zwischenrufe?&lt;/p&gt;
 
