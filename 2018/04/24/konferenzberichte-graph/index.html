@@ -7,7 +7,7 @@
 
   <title>
     
-      Matthias Friedmann &middot; 
+      Historiker im sozialer Graph &middot; Matthias Friedmann
     
   </title>
 
@@ -37,87 +37,72 @@
       </header>
 
       <main>
-        <div class="posts">
-  
-  <article class="post">
-    <time datetime="2018-04-21T00:00:00+02:00" class="post-date">21 Apr 2018</time>
+        <article class="post">
+  <h1 class="post-title">Historiker im sozialer Graph</h1>
+  <time datetime="2018-04-24T00:00:00+02:00" class="post-date">24 Apr 2018</time>
+  <p>Auf Basis der Daten die ich <a href="/2018/04/23/konferenzbericht-quelle-daten/">entsprechend extrahiert habe</a> ließ sich im nächsten Schritt eine Liste der Knoten und eine Liste der Kanten erzeugen.</p>
 
-    <h1 class="post-title">
-      <a href="/2018/04/21/zwischenrufe-im-parlament/">
-        Daten-Analyse: Zwischenrufe im Parlament
-      </a>
-    </h1>
-      Im Parlament würde nicht mehr richtig, entsprechend eines demokratischen Ideals, gearbeitet werden. Entscheidungen würden nicht mehr im verbalen Kampf, sondern in verborgenen Hinterzimmer getroffen werden. Früher, sei das anders gewesen: Da habe man gebannt vor dem Radio gesessen und den “wortgewaltige Rednern” zugehört.  Stimmt das? Wurde früher mehr gestritten?
+<p>Der Graph zeigt auf Basis dieser Daten zweierlei: Zum einen sind dort Konferenzen zu sehen, zum anderen die Teilnehmer von Konferenzen. Konkret lässt sich daran erkennen, welche Konferenzen gut besucht waren sowie welche Historiker besonders häufig auf verschiedenen Konferenzen vertreten war.</p>
 
+<p>Der Graph ist deutlich reduziert: Da die Anzahl der Personen, die nur einmal oder wenige male erwähnt wurden, <a href="">viel zu hoch ist</a>. Ich habe nur Personen eingetragen, die auf mindestens 10 Konferenzen waren,</p>
 
-  </article>
-  
-  <article class="post">
-    <time datetime="2018-04-22T00:00:00+02:00" class="post-date">22 Apr 2018</time>
+<p>Die Liste der Kanten:</p>
 
-    <h1 class="post-title">
-      <a href="/2018/04/22/historiker-als-netzwerk/">
-        Historiker als soziales Netzwerk - (Medium-)Big Data!
-      </a>
-    </h1>
-      Über Historiker gibt es unter den Historiker eine Reihe von <em>gefühlte Wahrheiten</em> oder Wissen, dass rein auf Erfahrungen beruht: Es gäbe Rezensions- oder Tagungscliquen, wenig Austausch zwischen verschiedenen speziellen Unterdisziplinen und dergleichen. Aber stimmt das auch?
+<pre><code class="language-csv">ID,Source,Target,Type
+0,person0,conf7244,Undirected
+34,person34,conf4084,Undirected
+35,person35,conf7233,Undirected
+</code></pre>
 
+<p>Die Liste der Knoten:</p>
 
-  </article>
-  
-  <article class="post">
-    <time datetime="2018-04-23T00:00:00+02:00" class="post-date">23 Apr 2018</time>
+<pre><code class="language-csv">Key,Id,Label,Cat
+0,conf7244,Wer ist Opfer des Na-7244,Conferences
+1,conf1973,"Krakau, Prag und Wie-1973",Conferences
+30923,person36729,MATTHIAS FRIEDMANN,Person
+</code></pre>
 
-    <h1 class="post-title">
-      <a href="/2018/04/23/konferenzbericht-quelle-daten/">
-        Historiker als soziales Netzwerk - Konferenzberichte als (Daten-)Quelle
-      </a>
-    </h1>
-      Die Tagungsberichte von HSozKult enthalten neben einer umfassenden Zusammenfassung der Vorträge viele nützliche Informationen: Name und Ursprung des Berichts, Thema, Zeit und Ort der Konferenz, Namen und Herkunftsorte der Referenten sowie durch die Redakteure vergeben Schlagworte für die Epochen und Themenbereiche der Veranstaltung. Die meisten dieser Daten lassen sich regelhaft auslesen.
+<p><img src="/images/hsoz-graph-04.jpg" alt="Konferenzen im sozialen Graph mit Communities" /></p>
 
+<p>Die Einstellung für Beschriftungen sind mir leider noch nicht gelungen. Aber man erkennt relativ deutlich unterschiedliche Gruppen: Im oberen Bereich ist die Mediävistik abgebildet, der Bereich mittig, rechts bildet sich aus den Frühe Neuzeit-Historikern und der große Block unten links sind die Zeithistoriker. Darunter lassen sich noch weitere Gemeinschaften identifizieren: Dabei scheint es sich einerseits um die Landes- und Wirtschaftsgeschichte zu handeln, die auf der linken Seite teilweise Brücken zwischen den Epochen gebildet haben.</p>
 
-  </article>
-  
-  <article class="post">
-    <time datetime="2018-04-23T00:00:00+02:00" class="post-date">23 Apr 2018</time>
+<p>Ebenso scheinen die Überschneidungen zwischen Mittelalter und Früher Neuzeit stärker, als zwischen der Zeitgeschichte und der Frühen Neuzeit.</p>
 
-    <h1 class="post-title">
-      <a href="/2018/04/23/sparql-karte/">
-        Fingerübung in SPARQL - Geburtsorte deutscher Schriftsteller
-      </a>
-    </h1>
-      Geburtsorte deutsche Schriftsteller aus dem 19., 20. und 21. Jahrhundert: Abfrage über SPARQL aus der DBPedia und Visualisierung mit Google Maps.
+<p>Die Communities unten rechts kann ich noch nicht ganz klar Identifizieren: Es scheint sich jedoch um Konferenzen mit einem Schwerpunkt in österreichischer und osteuropäischer Geschichte zu handeln.<!-- 
+ post_url 2018-04-17-konferenzberichte-daten %}
+ --></p>
+
+</article>
 
 
-  </article>
-  
-  <article class="post">
-    <time datetime="2018-04-24T00:00:00+02:00" class="post-date">24 Apr 2018</time>
+<aside class="related">
+  <h3>Related posts</h3>
+  <ul class="related-posts">
+    
+      <li>
+        <a href="/2018/04/29/konferenzberichte-karte/">
+          Historiker als soziales Netzwerk - eine schnelle Karte
+          <small><time datetime="2018-04-29T00:00:00+02:00">29 Apr 2018</time></small>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/2018/04/23/sparql-karte/">
+          Fingerübung in SPARQL - Geburtsorte deutscher Schriftsteller
+          <small><time datetime="2018-04-23T00:00:00+02:00">23 Apr 2018</time></small>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/2018/04/23/konferenzbericht-quelle-daten/">
+          Historiker als soziales Netzwerk - Konferenzberichte als (Daten-)Quelle
+          <small><time datetime="2018-04-23T00:00:00+02:00">23 Apr 2018</time></small>
+        </a>
+      </li>
+    
+  </ul>
+</aside>
 
-    <h1 class="post-title">
-      <a href="/2018/04/24/konferenzberichte-graph/">
-        Historiker im sozialer Graph
-      </a>
-    </h1>
-      Auf Basis der Daten die ich <a href="/2018/04/23/konferenzbericht-quelle-daten/">entsprechend extrahiert habe</a> ließ sich im nächsten Schritt eine Liste der Knoten und eine Liste der Kanten erzeugen.
-
-
-  </article>
-  
-  <article class="post">
-    <time datetime="2018-04-29T00:00:00+02:00" class="post-date">29 Apr 2018</time>
-
-    <h1 class="post-title">
-      <a href="/2018/04/29/konferenzberichte-karte/">
-        Historiker als soziales Netzwerk - eine schnelle Karte
-      </a>
-    </h1>
-      In welcher Stadt waren die meisten Konferenzen?
-
-
-  </article>
-  
-</div>
 
       </main>
 
