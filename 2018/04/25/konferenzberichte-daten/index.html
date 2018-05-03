@@ -7,7 +7,7 @@
 
   <title>
     
-      Historiker im sozialen Graph &middot; Matthias Friedmann
+      Historiker als soziales Netzwerk - die Zahlen &middot; Matthias Friedmann
     
   </title>
 
@@ -38,41 +38,153 @@
 
       <main>
         <article class="post">
-  <h1 class="post-title">Historiker im sozialen Graph</h1>
-  <time datetime="2018-04-24T00:00:00+02:00" class="post-date">24 Apr 2018</time>
-  <p>Wer mit wem? Wer war wo? Auf Basis der Daten die ich <a href="/2018/04/23/konferenzbericht-quelle-daten/">extrahiert habe</a> ließ sich im nächsten Schritt eine Liste der Knoten und eine Liste der Kanten erzeugen - um daraus eine bunte Grafik zu erzeugen ;-)</p>
+  <h1 class="post-title">Historiker als soziales Netzwerk - die Zahlen</h1>
+  <time datetime="2018-04-25T00:00:00+02:00" class="post-date">25 Apr 2018</time>
+  <p>Mehr als 44000 unterschiedliche Konferenzteilnehmer auf ungefähr 7500 Konferenzen mit knapp 82000 Konferenzbesuchern sind auf HSozKult verzeichnet. Die <a href="/2018/04/23/konferenzbericht-quelle-daten/">extrahierten</a> und <a href="/2018/04/24/konferenzberichte-graph/">nach Knoten und Kanten sortierten Daten</a> lassen sich nun mit pandas verarbeiten und analysieren, sowie weiterhin mit networkx untersuchen. Doch was sagen diese Zahlen letztlich aus?</p>
 
-<p>Der Graph zeigt auf Basis dieser Daten zweierlei: Zum einen sind dort Konferenzen zu sehen, zum anderen die Teilnehmer von Konferenzen. Konkret lässt sich daran erkennen, welche Konferenzen gut besucht waren sowie welche Historiker besonders häufig auf verschiedenen Konferenzen vertreten war.</p>
+<h2 id="wie-lange-sind-die-konferenzen">Wie lange sind die Konferenzen?</h2>
 
-<p>Der Graph ist deutlich reduziert: Da die Anzahl der Personen, die nur einmal oder wenige male erwähnt wurden, <a href="">viel zu hoch ist</a>. Ich habe nur Personen eingetragen, die auf mindestens 10 Konferenzen waren,</p>
+<p>Im Durchschnitt etwas mehr 2 1/2 Tage. Leider finden sich immer wieder grobe Fehler bei den eingegebenen Daten, so dass manche Konferenzen angeblich mehr als 30 Tage lang waren, dabei waren sie lediglich auf zwei Tage verteilt.<br />
+<img src="/images/avg-length.png" alt="Konferenzbesuche" /></p>
 
-<p>Die Liste der Kanten:</p>
+<h2 id="wann-sind-die-konferenzen-im-jahr-verteilt">Wann sind die Konferenzen im Jahr verteilt?</h2>
 
-<pre><code class="language-csv">ID,Source,Target,Type
-0,person0,conf7244,Undirected
-34,person34,conf4084,Undirected
-35,person35,conf7233,Undirected
-</code></pre>
+<p>Die Karte zeigt an, wie viele Konferenztage pro Monat in den Berichten angegeben?</p>
 
-<p>Die Liste der Knoten:</p>
+<div>
+	<iframe style="width: 900px;border: none;height: 430px;margin-left: -100px;" src="/assets/heat.html"></iframe>
+</div>
 
-<pre><code class="language-csv">Key,Id,Label,Cat
-0,conf7244,Wer ist Opfer des Na-7244,Conferences
-1,conf1973,"Krakau, Prag und Wie-1973",Conferences
-30923,person36729,MATTHIAS FRIEDMANN,Person
-</code></pre>
+<h2 id="durchschnittliche-teilnehmer-auf-konferenzen">Durchschnittliche Teilnehmer auf Konferenzen</h2>
 
-<p>Insgesamt besteht das Netzwerk aus 51619 Knoten mit 82082 Kanten</p>
+<p>Die Anzahl der Teilnehmer ist im Durchschnitt sehr stabil. In regelmäßigen Abständen lässt sich jedoch ein Ausschlag nach oben erkennen: Verursacht durch den Historikertag.</p>
 
-<p><img src="/images/hsoz-graph-04.jpg" alt="Konferenzen im sozialen Graph mit Communities" /></p>
+<p><img src="/images/avg-part-3004.png" alt="Durchschnittliche Konferenzgröße" /></p>
 
-<p>Die Einstellung für Beschriftungen sind mir leider noch nicht gelungen. Aber man erkennt relativ deutlich unterschiedliche Gruppen: Im oberen Bereich ist die Mediävistik abgebildet, der Bereich mittig, rechts bildet sich aus den Frühe Neuzeit-Historikern und der große Block unten links sind die Zeithistoriker. Darunter lassen sich noch weitere Gemeinschaften identifizieren: Dabei scheint es sich einerseits um die Landes- und Wirtschaftsgeschichte zu handeln, die auf der linken Seite teilweise Brücken zwischen den Epochen gebildet haben.</p>
+<h2 id="die-top-25-konferenzbesucher">Die Top 25 Konferenzbesucher:</h2>
 
-<p>Ebenso scheinen die Überschneidungen zwischen Mittelalter und Früher Neuzeit stärker, als zwischen der Zeitgeschichte und der Frühen Neuzeit.</p>
+<p>Wie oft werden sie in Konferenzberichten als Referenten erwähnt?</p>
 
-<p>Die Communities unten rechts kann ich noch nicht ganz klar Identifizieren: Es scheint sich jedoch um Konferenzen mit einem Schwerpunkt in österreichischer und osteuropäischer Geschichte zu handeln.<!-- 
- post_url 2018-04-17-konferenzberichte-daten %}
- --></p>
+<dl>
+  <dt>FRANK BÖSCH</dt>
+  <dd>(61)</dd>
+  <dt>MARIAN FÜSSEL</dt>
+  <dd>(45)</dd>
+  <dt>MARTIN SABROW</dt>
+  <dd>(42)</dd>
+  <dt>ANDREAS WIRSCHING</dt>
+  <dd>(42)</dd>
+  <dt>ANDREAS ECKERT</dt>
+  <dd>(41)</dd>
+  <dt>STEFAN BERGER</dt>
+  <dd>(38)</dd>
+  <dt>MATTHIAS MIDDELL</dt>
+  <dd>(37)</dd>
+  <dt>PETER HASLINGER</dt>
+  <dd>(36)</dd>
+  <dt>MICHAEL WILDT</dt>
+  <dd>(32)</dd>
+  <dt>JORN LEONHARD</dt>
+  <dd>(32)</dd>
+  <dt>STEFFEN PATZOLD</dt>
+  <dd>(32)</dd>
+  <dt>ANDREAS GESTRICH</dt>
+  <dd>(31)</dd>
+  <dt>AXEL SCHILDT</dt>
+  <dd>(31)</dd>
+  <dt>GERD SCHWERHOFF</dt>
+  <dd>(29)</dd>
+  <dt>STEFAN TROEBST</dt>
+  <dd>(29)</dd>
+  <dt>WERNER PLUMPE</dt>
+  <dd>(29)</dd>
+  <dt>FRANK BAJOHR</dt>
+  <dd>(29)</dd>
+  <dt>KLAUS HERBERS</dt>
+  <dd>(29)</dd>
+  <dt>MARTIN SCHULZE WESSEL</dt>
+  <dd>(29)</dd>
+  <dt>ARND BAUERKAMPER</dt>
+  <dd>(28)</dd>
+  <dt>BERND WEISBROD</dt>
+  <dd>(28)</dd>
+  <dt>RUDIGER GRAF</dt>
+  <dd>(28)</dd>
+  <dt>JAN KUSBER</dt>
+  <dd>(27)</dd>
+  <dt>CONSTANTIN GOSCHLER</dt>
+  <dd>(27)</dd>
+  <dt>LUTZ RAPHAEL</dt>
+  <dd>(26)</dd>
+</dl>
+
+<h2 id="verteilung-der-konferenzbesuche">Verteilung der Konferenzbesuche</h2>
+<p>Insgesamt konnten um die 44000 individuelle Teilnehmer in 7360 Konferenzberichten identifiziert werden. Die meisten davon, treten jedoch nur ein einziges mal in Erscheinung:</p>
+
+<p><img src="/images/konferenzbesuche.png" alt="Dauer der Konferenzen" /></p>
+
+<p>Ein wenig deutlicher auf einer gekürzten Grafik:<br />
+<img src="/images/konferenzbesuche-1000.png" alt="Dauer der Konferenzen" /></p>
+
+<p class="message message">Die deutliche Mehrheit der Konferenzteilnehmer wird nur ein einziges Mal in den Berichten erwähnt. Der “harte Kern” ist, wie zu erwarten, demgegenüber sehr klein. Die Frage ist jedoch, welche Bedeutung diese Diskrepanz trägt? Handelt es sich bei denjenigen, die nur ein, zwei oder drei mal genannt werden um Doktorranden, die danach nicht mehr wissenschaftlich aktiv waren? Oder sind es mehrheitlich fachfremde Referenten? Was kennzeichnet somit einen “durchschnittlichen” Historiker?</p>
+
+<p><em>TODO</em>: X-Skala zur besseren Lesbarkeit einstellen</p>
+
+<h2 id="die-top-20-historiker-nach-der-eigenvector-centrality">Die Top 20 Historiker nach der “eigenvector centrality”:</h2>
+<dl>
+  <dt>MARIAN FUSSEL</dt>
+  <dd>(0.1750126382944392)</dd>
+  <dt>BARBARA STOLLBERG-RILINGER</dt>
+  <dd>(0.10407315101326663)</dd>
+  <dt>CHRISTOPH KAMPMANN</dt>
+  <dd>(0.1037224603805015)</dd>
+  <dt>FRANK BOSCH</dt>
+  <dd>(0.10251836693620446)</dd>
+  <dt>ANTJE FLUCHTER</dt>
+  <dd>(0.09031361219949209)</dd>
+  <dt>CHRISTIAN WINDLER</dt>
+  <dd>(0.08935929269939945)</dd>
+  <dt>MATTHIAS SCHNETTGER</dt>
+  <dd>(0.08791321822540153)</dd>
+  <dt>ULRIKE LUDWIG</dt>
+  <dd>(0.08187043959327235)</dd>
+  <dt>BIRGIT EMICH</dt>
+  <dd>(0.08029938586600445)</dd>
+  <dt>DAGMAR FREIST</dt>
+  <dd>(0.07484774270885715)</dd>
+  <dt>INKEN SCHMIDT-VOGES</dt>
+  <dd>(0.07383825764272922)</dd>
+  <dt>ANDRE KRISCHER</dt>
+  <dd>(0.07359277600060202)</dd>
+  <dt>JAN KUSBER</dt>
+  <dd>(0.07315976973656224)</dd>
+  <dt>ANDREAS WIRSCHING</dt>
+  <dd>(0.07058880944063908)</dd>
+  <dt>HORST CARL</dt>
+  <dd>(0.0654544780891917)</dd>
+  <dt>ANDREAS PECAR</dt>
+  <dd>(0.06315031454077778)</dd>
+  <dt>THOMAS MAISSEN</dt>
+  <dd>(0.06149524433326217)</dd>
+  <dt>CHRISTINA BRAUNER</dt>
+  <dd>(0.05950715153524972)</dd>
+  <dt>PHILIP HAHN</dt>
+  <dd>(0.05856839511306527)</dd>
+  <dt>THOMAS WELLER</dt>
+  <dd>(0.05800591829601456)4</dd>
+  <dt>ARNDT BRENDECKE</dt>
+  <dd>(0.05760072877885903)</dd>
+</dl>
+
+<p class="message message"><strong>Was bedeutet “eigenvector”?</strong> <br />
+X<br />
+<strong>Was bedeutet das für das Ergebnis?</strong><br />
+Y</p>
+
+<h2 id="communities">Communities</h2>
+
+<p>Die 44000 Historiker lassen sich weiter unterteilen: Insgesamt können bis zu 800 einzelne “communites” ausgemacht werden. Auf den ersten Blick wären das die “Zeithistoriker”, die “Geschichtsdidaktiker” (2259 Personen), Wirschafts- und Sozialhistoriker, Mittelalter, Frühe Neuzeit, usf. Andere Gruppen sind hingegen schwerer anhand eines Themas zu identifizieren. Was ist mit den übrigen Gruppen, die erkannt wurden? Handelt es sich immer um eigenständige “communities”? Hat der Algorithmus hier zufällige Daten produziert? Oder lässt sich auch ein inhaltliches Muster erkennen? Mit welchen Themen befassen sich die Vorträge in diesen communities?</p>
+
 
 </article>
 
@@ -89,9 +201,9 @@
       </li>
     
       <li>
-        <a href="/2018/04/25/konferenzberichte-daten/">
-          Historiker als soziales Netzwerk - die Zahlen
-          <small><time datetime="2018-04-25T00:00:00+02:00">25 Apr 2018</time></small>
+        <a href="/2018/04/24/konferenzberichte-graph/">
+          Historiker im sozialen Graph
+          <small><time datetime="2018-04-24T00:00:00+02:00">24 Apr 2018</time></small>
         </a>
       </li>
     

@@ -6,15 +6,13 @@
 </description>
     <link>https://mazzefrie.github.io//</link>
     <atom:link href="https://mazzefrie.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 01 May 2018 20:40:45 +0200</pubDate>
-    <lastBuildDate>Tue, 01 May 2018 20:40:45 +0200</lastBuildDate>
+    <pubDate>Thu, 03 May 2018 16:28:19 +0200</pubDate>
+    <lastBuildDate>Thu, 03 May 2018 16:28:19 +0200</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
         <title>Historiker als soziales Netzwerk - eine schnelle Karte</title>
-        <description>&lt;p&gt;In welcher Stadt waren die meisten Konferenzen?&lt;/p&gt;
-
-&lt;p&gt;Ich beschränke mich dabei auf Orte mit mindestens 8 Konferenzen. Leider hat die Google GeoCode-Api einfach angenommen, es wäre Augsburg und Rom in den USA gemeint ;-)&lt;/p&gt;
+        <description>&lt;p&gt;In welcher Stadt waren die meisten Konferenzen? Mit Hilfe einer Karte, lassen sich die Hotspots für Historiker zumindest in Deutschland identifizieren. Ich beschränke mich dabei auf Orte mit mindestens 8 Konferenzen. Leider hat die Google GeoCode-Api einfach angenommen, es wäre Augsburg und Rom in den USA gemeint ;-)&lt;/p&gt;
 
 &lt;div&gt;
 
@@ -80,8 +78,163 @@
       </item>
     
       <item>
-        <title>Historiker im sozialer Graph</title>
-        <description>&lt;p&gt;Auf Basis der Daten die ich &lt;a href=&quot;/2018/04/23/konferenzbericht-quelle-daten/&quot;&gt;entsprechend extrahiert habe&lt;/a&gt; ließ sich im nächsten Schritt eine Liste der Knoten und eine Liste der Kanten erzeugen.&lt;/p&gt;
+        <title>Historiker als soziales Netzwerk - die Zahlen</title>
+        <description>&lt;p&gt;Mehr als 44000 unterschiedliche Konferenzteilnehmer auf ungefähr 7500 Konferenzen mit knapp 82000 Konferenzbesuchern sind auf HSozKult verzeichnet. Die &lt;a href=&quot;/2018/04/23/konferenzbericht-quelle-daten/&quot;&gt;extrahierten&lt;/a&gt; und &lt;a href=&quot;/2018/04/24/konferenzberichte-graph/&quot;&gt;nach Knoten und Kanten sortierten Daten&lt;/a&gt; lassen sich nun mit pandas verarbeiten und analysieren, sowie weiterhin mit networkx untersuchen. Doch was sagen diese Zahlen letztlich aus?&lt;/p&gt;
+
+&lt;h2 id=&quot;wie-lange-sind-die-konferenzen&quot;&gt;Wie lange sind die Konferenzen?&lt;/h2&gt;
+
+&lt;p&gt;Im Durchschnitt etwas mehr 2 1/2 Tage. Leider finden sich immer wieder grobe Fehler bei den eingegebenen Daten, so dass manche Konferenzen angeblich mehr als 30 Tage lang waren, dabei waren sie lediglich auf zwei Tage verteilt.&lt;br /&gt;
+&lt;img src=&quot;/images/avg-length.png&quot; alt=&quot;Konferenzbesuche&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;wann-sind-die-konferenzen-im-jahr-verteilt&quot;&gt;Wann sind die Konferenzen im Jahr verteilt?&lt;/h2&gt;
+
+&lt;p&gt;Die Karte zeigt an, wie viele Konferenztage pro Monat in den Berichten angegeben?&lt;/p&gt;
+
+&lt;div&gt;
+	&lt;iframe style=&quot;width: 900px;border: none;height: 430px;margin-left: -100px;&quot; src=&quot;/assets/heat.html&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;durchschnittliche-teilnehmer-auf-konferenzen&quot;&gt;Durchschnittliche Teilnehmer auf Konferenzen&lt;/h2&gt;
+
+&lt;p&gt;Die Anzahl der Teilnehmer ist im Durchschnitt sehr stabil. In regelmäßigen Abständen lässt sich jedoch ein Ausschlag nach oben erkennen: Verursacht durch den Historikertag.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/avg-part-3004.png&quot; alt=&quot;Durchschnittliche Konferenzgröße&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;die-top-25-konferenzbesucher&quot;&gt;Die Top 25 Konferenzbesucher:&lt;/h2&gt;
+
+&lt;p&gt;Wie oft werden sie in Konferenzberichten als Referenten erwähnt?&lt;/p&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;FRANK BÖSCH&lt;/dt&gt;
+  &lt;dd&gt;(61)&lt;/dd&gt;
+  &lt;dt&gt;MARIAN FÜSSEL&lt;/dt&gt;
+  &lt;dd&gt;(45)&lt;/dd&gt;
+  &lt;dt&gt;MARTIN SABROW&lt;/dt&gt;
+  &lt;dd&gt;(42)&lt;/dd&gt;
+  &lt;dt&gt;ANDREAS WIRSCHING&lt;/dt&gt;
+  &lt;dd&gt;(42)&lt;/dd&gt;
+  &lt;dt&gt;ANDREAS ECKERT&lt;/dt&gt;
+  &lt;dd&gt;(41)&lt;/dd&gt;
+  &lt;dt&gt;STEFAN BERGER&lt;/dt&gt;
+  &lt;dd&gt;(38)&lt;/dd&gt;
+  &lt;dt&gt;MATTHIAS MIDDELL&lt;/dt&gt;
+  &lt;dd&gt;(37)&lt;/dd&gt;
+  &lt;dt&gt;PETER HASLINGER&lt;/dt&gt;
+  &lt;dd&gt;(36)&lt;/dd&gt;
+  &lt;dt&gt;MICHAEL WILDT&lt;/dt&gt;
+  &lt;dd&gt;(32)&lt;/dd&gt;
+  &lt;dt&gt;JORN LEONHARD&lt;/dt&gt;
+  &lt;dd&gt;(32)&lt;/dd&gt;
+  &lt;dt&gt;STEFFEN PATZOLD&lt;/dt&gt;
+  &lt;dd&gt;(32)&lt;/dd&gt;
+  &lt;dt&gt;ANDREAS GESTRICH&lt;/dt&gt;
+  &lt;dd&gt;(31)&lt;/dd&gt;
+  &lt;dt&gt;AXEL SCHILDT&lt;/dt&gt;
+  &lt;dd&gt;(31)&lt;/dd&gt;
+  &lt;dt&gt;GERD SCHWERHOFF&lt;/dt&gt;
+  &lt;dd&gt;(29)&lt;/dd&gt;
+  &lt;dt&gt;STEFAN TROEBST&lt;/dt&gt;
+  &lt;dd&gt;(29)&lt;/dd&gt;
+  &lt;dt&gt;WERNER PLUMPE&lt;/dt&gt;
+  &lt;dd&gt;(29)&lt;/dd&gt;
+  &lt;dt&gt;FRANK BAJOHR&lt;/dt&gt;
+  &lt;dd&gt;(29)&lt;/dd&gt;
+  &lt;dt&gt;KLAUS HERBERS&lt;/dt&gt;
+  &lt;dd&gt;(29)&lt;/dd&gt;
+  &lt;dt&gt;MARTIN SCHULZE WESSEL&lt;/dt&gt;
+  &lt;dd&gt;(29)&lt;/dd&gt;
+  &lt;dt&gt;ARND BAUERKAMPER&lt;/dt&gt;
+  &lt;dd&gt;(28)&lt;/dd&gt;
+  &lt;dt&gt;BERND WEISBROD&lt;/dt&gt;
+  &lt;dd&gt;(28)&lt;/dd&gt;
+  &lt;dt&gt;RUDIGER GRAF&lt;/dt&gt;
+  &lt;dd&gt;(28)&lt;/dd&gt;
+  &lt;dt&gt;JAN KUSBER&lt;/dt&gt;
+  &lt;dd&gt;(27)&lt;/dd&gt;
+  &lt;dt&gt;CONSTANTIN GOSCHLER&lt;/dt&gt;
+  &lt;dd&gt;(27)&lt;/dd&gt;
+  &lt;dt&gt;LUTZ RAPHAEL&lt;/dt&gt;
+  &lt;dd&gt;(26)&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;h2 id=&quot;verteilung-der-konferenzbesuche&quot;&gt;Verteilung der Konferenzbesuche&lt;/h2&gt;
+&lt;p&gt;Insgesamt konnten um die 44000 individuelle Teilnehmer in 7360 Konferenzberichten identifiziert werden. Die meisten davon, treten jedoch nur ein einziges mal in Erscheinung:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/konferenzbesuche.png&quot; alt=&quot;Dauer der Konferenzen&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ein wenig deutlicher auf einer gekürzten Grafik:&lt;br /&gt;
+&lt;img src=&quot;/images/konferenzbesuche-1000.png&quot; alt=&quot;Dauer der Konferenzen&quot; /&gt;&lt;/p&gt;
+
+&lt;p class=&quot;message message&quot;&gt;Die deutliche Mehrheit der Konferenzteilnehmer wird nur ein einziges Mal in den Berichten erwähnt. Der “harte Kern” ist, wie zu erwarten, demgegenüber sehr klein. Die Frage ist jedoch, welche Bedeutung diese Diskrepanz trägt? Handelt es sich bei denjenigen, die nur ein, zwei oder drei mal genannt werden um Doktorranden, die danach nicht mehr wissenschaftlich aktiv waren? Oder sind es mehrheitlich fachfremde Referenten? Was kennzeichnet somit einen “durchschnittlichen” Historiker?&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;TODO&lt;/em&gt;: X-Skala zur besseren Lesbarkeit einstellen&lt;/p&gt;
+
+&lt;h2 id=&quot;die-top-20-historiker-nach-der-eigenvector-centrality&quot;&gt;Die Top 20 Historiker nach der “eigenvector centrality”:&lt;/h2&gt;
+&lt;dl&gt;
+  &lt;dt&gt;MARIAN FUSSEL&lt;/dt&gt;
+  &lt;dd&gt;(0.1750126382944392)&lt;/dd&gt;
+  &lt;dt&gt;BARBARA STOLLBERG-RILINGER&lt;/dt&gt;
+  &lt;dd&gt;(0.10407315101326663)&lt;/dd&gt;
+  &lt;dt&gt;CHRISTOPH KAMPMANN&lt;/dt&gt;
+  &lt;dd&gt;(0.1037224603805015)&lt;/dd&gt;
+  &lt;dt&gt;FRANK BOSCH&lt;/dt&gt;
+  &lt;dd&gt;(0.10251836693620446)&lt;/dd&gt;
+  &lt;dt&gt;ANTJE FLUCHTER&lt;/dt&gt;
+  &lt;dd&gt;(0.09031361219949209)&lt;/dd&gt;
+  &lt;dt&gt;CHRISTIAN WINDLER&lt;/dt&gt;
+  &lt;dd&gt;(0.08935929269939945)&lt;/dd&gt;
+  &lt;dt&gt;MATTHIAS SCHNETTGER&lt;/dt&gt;
+  &lt;dd&gt;(0.08791321822540153)&lt;/dd&gt;
+  &lt;dt&gt;ULRIKE LUDWIG&lt;/dt&gt;
+  &lt;dd&gt;(0.08187043959327235)&lt;/dd&gt;
+  &lt;dt&gt;BIRGIT EMICH&lt;/dt&gt;
+  &lt;dd&gt;(0.08029938586600445)&lt;/dd&gt;
+  &lt;dt&gt;DAGMAR FREIST&lt;/dt&gt;
+  &lt;dd&gt;(0.07484774270885715)&lt;/dd&gt;
+  &lt;dt&gt;INKEN SCHMIDT-VOGES&lt;/dt&gt;
+  &lt;dd&gt;(0.07383825764272922)&lt;/dd&gt;
+  &lt;dt&gt;ANDRE KRISCHER&lt;/dt&gt;
+  &lt;dd&gt;(0.07359277600060202)&lt;/dd&gt;
+  &lt;dt&gt;JAN KUSBER&lt;/dt&gt;
+  &lt;dd&gt;(0.07315976973656224)&lt;/dd&gt;
+  &lt;dt&gt;ANDREAS WIRSCHING&lt;/dt&gt;
+  &lt;dd&gt;(0.07058880944063908)&lt;/dd&gt;
+  &lt;dt&gt;HORST CARL&lt;/dt&gt;
+  &lt;dd&gt;(0.0654544780891917)&lt;/dd&gt;
+  &lt;dt&gt;ANDREAS PECAR&lt;/dt&gt;
+  &lt;dd&gt;(0.06315031454077778)&lt;/dd&gt;
+  &lt;dt&gt;THOMAS MAISSEN&lt;/dt&gt;
+  &lt;dd&gt;(0.06149524433326217)&lt;/dd&gt;
+  &lt;dt&gt;CHRISTINA BRAUNER&lt;/dt&gt;
+  &lt;dd&gt;(0.05950715153524972)&lt;/dd&gt;
+  &lt;dt&gt;PHILIP HAHN&lt;/dt&gt;
+  &lt;dd&gt;(0.05856839511306527)&lt;/dd&gt;
+  &lt;dt&gt;THOMAS WELLER&lt;/dt&gt;
+  &lt;dd&gt;(0.05800591829601456)4&lt;/dd&gt;
+  &lt;dt&gt;ARNDT BRENDECKE&lt;/dt&gt;
+  &lt;dd&gt;(0.05760072877885903)&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;p class=&quot;message message&quot;&gt;&lt;strong&gt;Was bedeutet “eigenvector”?&lt;/strong&gt; &lt;br /&gt;
+X&lt;br /&gt;
+&lt;strong&gt;Was bedeutet das für das Ergebnis?&lt;/strong&gt;&lt;br /&gt;
+Y&lt;/p&gt;
+
+&lt;h2 id=&quot;communities&quot;&gt;Communities&lt;/h2&gt;
+
+&lt;p&gt;Die 44000 Historiker lassen sich weiter unterteilen: Insgesamt können bis zu 800 einzelne “communites” ausgemacht werden. Auf den ersten Blick wären das die “Zeithistoriker”, die “Geschichtsdidaktiker” (2259 Personen), Wirschafts- und Sozialhistoriker, Mittelalter, Frühe Neuzeit, usf. Andere Gruppen sind hingegen schwerer anhand eines Themas zu identifizieren. Was ist mit den übrigen Gruppen, die erkannt wurden? Handelt es sich immer um eigenständige “communities”? Hat der Algorithmus hier zufällige Daten produziert? Oder lässt sich auch ein inhaltliches Muster erkennen? Mit welchen Themen befassen sich die Vorträge in diesen communities?&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 25 Apr 2018 00:00:00 +0200</pubDate>
+        <link>https://mazzefrie.github.io//2018/04/25/konferenzberichte-daten/</link>
+        <guid isPermaLink="true">https://mazzefrie.github.io//2018/04/25/konferenzberichte-daten/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Historiker im sozialen Graph</title>
+        <description>&lt;p&gt;Wer mit wem? Wer war wo? Auf Basis der Daten die ich &lt;a href=&quot;/2018/04/23/konferenzbericht-quelle-daten/&quot;&gt;extrahiert habe&lt;/a&gt; ließ sich im nächsten Schritt eine Liste der Knoten und eine Liste der Kanten erzeugen - um daraus eine bunte Grafik zu erzeugen ;-)&lt;/p&gt;
 
 &lt;p&gt;Der Graph zeigt auf Basis dieser Daten zweierlei: Zum einen sind dort Konferenzen zu sehen, zum anderen die Teilnehmer von Konferenzen. Konkret lässt sich daran erkennen, welche Konferenzen gut besucht waren sowie welche Historiker besonders häufig auf verschiedenen Konferenzen vertreten war.&lt;/p&gt;
 
@@ -102,6 +255,8 @@
 1,conf1973,&quot;Krakau, Prag und Wie-1973&quot;,Conferences
 30923,person36729,MATTHIAS FRIEDMANN,Person
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Insgesamt besteht das Netzwerk aus 51619 Knoten mit 82082 Kanten&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/hsoz-graph-04.jpg&quot; alt=&quot;Konferenzen im sozialen Graph mit Communities&quot; /&gt;&lt;/p&gt;
 
@@ -292,6 +447,11 @@ WHERE  {&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;p&gt;Neue Probleme vom 02.05.:&lt;br /&gt;
+* Genitiv-S am Nachnamen führt dazu, dass Namen nicht eindeutig zusammengefügt werden können: “FRIEDMANN” und “FRIEDMANNS” wären demnach zwei Personen.&lt;br /&gt;
+* Manchmal werden die Titel von Konferenzen im Text in Großbuchstaben geschrieben und daher als Namen erkannt. Mögliche Gegemaßnahme: Auf Grund der bisherigen Daten mit Hilfe der durchschnittlichen Namenslänge aussortieren?&lt;br /&gt;
+* Mehrere Vornamen können nicht aufgelöst werden (André Krischer und André Johannes Krischer werden z.B. getrennt erkannt)&lt;/p&gt;
+
 &lt;h3 id=&quot;teilnehmer-pro-konferenz-im-jahresdurchschnitt&quot;&gt;Teilnehmer pro Konferenz im Jahresdurchschnitt&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;Stand vom 28.04.2018:&lt;/strong&gt;&lt;br /&gt;
@@ -363,6 +523,8 @@ Einige Fehler ließen sich offenbar beheben. Sehr auffällig ist jedoch, dass di
         <description>&lt;p&gt;Über Historiker gibt es unter den Historiker eine Reihe von &lt;em&gt;gefühlte Wahrheiten&lt;/em&gt; oder Wissen, dass rein auf Erfahrungen beruht: Es gäbe Rezensions- oder Tagungscliquen, wenig Austausch zwischen verschiedenen speziellen Unterdisziplinen und dergleichen. Aber stimmt das auch?&lt;/p&gt;
 
 &lt;p&gt;Über die Analyse eines großen Datensets aus Konferenzberichte, aber auch Rezensionen oder Stellenanzeigen, so meine These, können diesen &lt;em&gt;gefühlten Wahrheiten&lt;/em&gt; mehr oder eben auch weniger Substanz verliehen werden. Viele der Ergebnisse werden vermutlich nicht überraschen, wohl aber durch Zahlen greifbarer.&lt;/p&gt;
+
+&lt;p&gt;Andererseits ist das Feld der “Geschichtswissenschaft” enorm groß und nur schwer zu überblicken. Abstrakte Zahlen können dabei helfen etwas sichtbar zu machen, was so nicht sichtbar ist. Auf diese Weise können sie auch dabei helfen etwas über die “Praktiken des Historiker-seins” zu erfahren: Welche Rolle spielen Konferenzen zum Beispiel für die Rolle des “Historikers”?&lt;/p&gt;
 
 &lt;p class=&quot;message&quot;&gt;Die Idee für das Projekt stammt aus einer Übung von &lt;a href=&quot;https://www.uni-muenster.de/Geschichte/histsem/JPGHuSMA/personen/hiltmann/index.html&quot;&gt;Thorsten Hiltmann&lt;/a&gt; an der WWU Münster im SS 2018&lt;/p&gt;
 
