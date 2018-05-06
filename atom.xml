@@ -4,7 +4,7 @@
  <title>Matthias Friedmann</title>
  <link href="https://mazzefrie.github.io//atom.xml" rel="self"/>
  <link href="https://mazzefrie.github.io//"/>
- <updated>2018-05-06T15:54:29+02:00</updated>
+ <updated>2018-05-06T16:13:33+02:00</updated>
  <id>https://mazzefrie.github.io/</id>
  <author>
    <name></name>
@@ -449,9 +449,16 @@ WHERE  {&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Neue Probleme vom 02.05.:&lt;br /&gt;
-* Genitiv-S am Nachnamen führt dazu, dass Namen nicht eindeutig zusammengefügt werden können: “FRIEDMANN” und “FRIEDMANNS” wären demnach zwei Personen.&lt;br /&gt;
-* Manchmal werden die Titel von Konferenzen im Text in Großbuchstaben geschrieben und daher als Namen erkannt. Mögliche Gegemaßnahme: Auf Grund der bisherigen Daten mit Hilfe der durchschnittlichen Namenslänge aussortieren?&lt;br /&gt;
-* Mehrere Vornamen können nicht aufgelöst werden (André Krischer und André Johannes Krischer werden z.B. getrennt erkannt)&lt;/p&gt;
+* Genitiv-S am Nachnamen führt dazu, dass Namen nicht eindeutig zusammengefügt werden können: “FRIEDMANN” und “FRIEDMANNS” wären demnach zwei Personen.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Manchmal werden die Titel von Konferenzen im Text in Großbuchstaben geschrieben und daher als Namen erkannt. Mögliche Gegemaßnahme: Auf Grund der bisherigen Daten mit Hilfe der durchschnittlichen Namenslänge aussortieren?&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Mehrere Vornamen können nicht aufgelöst werden (André Krischer und André Johannes Krischer werden z.B. getrennt erkannt)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h3 id=&quot;teilnehmer-pro-konferenz-im-jahresdurchschnitt&quot;&gt;Teilnehmer pro Konferenz im Jahresdurchschnitt&lt;/h3&gt;
 
