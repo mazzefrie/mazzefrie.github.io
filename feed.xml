@@ -6,8 +6,8 @@
 </description>
     <link>https://mazzefrie.github.io//</link>
     <atom:link href="https://mazzefrie.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 06 May 2018 15:26:20 +0200</pubDate>
-    <lastBuildDate>Sun, 06 May 2018 15:26:20 +0200</lastBuildDate>
+    <pubDate>Sun, 06 May 2018 15:54:29 +0200</pubDate>
+    <lastBuildDate>Sun, 06 May 2018 15:54:29 +0200</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -167,8 +167,6 @@
 
 &lt;p class=&quot;message message&quot;&gt;Die deutliche Mehrheit der Konferenzteilnehmer wird nur ein einziges Mal in den Berichten erwähnt. Der “harte Kern” ist, wie zu erwarten, demgegenüber sehr klein. Die Frage ist jedoch, welche Bedeutung diese Diskrepanz trägt? Handelt es sich bei denjenigen, die nur ein, zwei oder drei mal genannt werden um Doktorranden, die danach nicht mehr wissenschaftlich aktiv waren? Oder sind es mehrheitlich fachfremde Referenten? Was kennzeichnet somit einen “durchschnittlichen” Historiker?&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;TODO&lt;/em&gt;: X-Skala zur besseren Lesbarkeit einstellen&lt;/p&gt;
-
 &lt;h2 id=&quot;die-top-20-historiker-nach-der-eigenvector-centrality&quot;&gt;Die Top 20 Historiker nach der “eigenvector centrality”:&lt;/h2&gt;
 &lt;dl&gt;
   &lt;dt&gt;MARIAN FUSSEL&lt;/dt&gt;
@@ -215,14 +213,14 @@
   &lt;dd&gt;(0.05760072877885903)&lt;/dd&gt;
 &lt;/dl&gt;
 
-&lt;p class=&quot;message message&quot;&gt;&lt;strong&gt;Was bedeutet “eigenvector”?&lt;/strong&gt; &lt;br /&gt;
-X&lt;br /&gt;
-&lt;strong&gt;Was bedeutet das für das Ergebnis?&lt;/strong&gt;&lt;br /&gt;
-Y&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Was bedeutet “eigenvector”?&lt;/strong&gt; &lt;br /&gt;
+Dabei handelt es sich um eine Vorgehensweise um die “Bedeutung” bzw. “Zentralität” eines Kontens in einem Netzwerk/Graph zu ermitteln. Berücksichtigt wird dabei die Anzhal der Verbindungen, die ein Knoten zu anderne Knoten hat, so wie die Qualität - d.h. wiederum deren Zentralität im Netzwerk - der jeweiligen Verbunden Konten&lt;/p&gt;
+
+&lt;p class=&quot;message message&quot;&gt;&lt;strong&gt;Was bedeutet das für das Ergebnis?&lt;/strong&gt;&lt;br /&gt;
+Die aufgelisteten Personen haben demnach Konferenzen besucht, die wiederum eine hohe Zentralität einnahmen.&lt;/p&gt;
 
 &lt;h2 id=&quot;communities&quot;&gt;Communities&lt;/h2&gt;
-
-&lt;p&gt;Die 44000 Historiker lassen sich weiter unterteilen: Insgesamt können bis zu 800 einzelne “communites” ausgemacht werden. Auf den ersten Blick wären das die “Zeithistoriker”, die “Geschichtsdidaktiker” (2259 Personen), Wirschafts- und Sozialhistoriker, Mittelalter, Frühe Neuzeit, usf. Andere Gruppen sind hingegen schwerer anhand eines Themas zu identifizieren. Was ist mit den übrigen Gruppen, die erkannt wurden? Handelt es sich immer um eigenständige “communities”? Hat der Algorithmus hier zufällige Daten produziert? Oder lässt sich auch ein inhaltliches Muster erkennen? Mit welchen Themen befassen sich die Vorträge in diesen communities?&lt;/p&gt;
+&lt;p&gt;Die 44000 Historiker lassen sich weiter unterteilen: Insgesamt können bis zu 800 einzelne “communites” ausgemacht werden. Auf den ersten Blick wären das die “Zeithistoriker”, die “Geschichtsdidaktiker” (2259 Personen), Wirschafts- und Sozialhistoriker, Mittelalter, Frühe Neuzeit, usf. Andere Gruppen sind hingegen schwerer anhand eines Themas zu identifizieren. Was ist mit den übrigen Gruppen, die erkannt wurden? Handelt es sich immer um eigenständige “communities”? Hat der Algorithmus hier “zufällige” Daten produziert? Oder lässt sich auch ein inhaltliches Muster erkennen? Mit welchen Themen befassen sich die Vorträge in diesen communities? Die Verwendung von Topic Modeling verspricht einen Ansatzpunkt um die communites thematisch unterscheiden zu können.&lt;/p&gt;
 
 </description>
         <pubDate>Wed, 25 Apr 2018 00:00:00 +0200</pubDate>
