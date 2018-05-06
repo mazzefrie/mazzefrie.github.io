@@ -47,7 +47,7 @@
         Daten-Analyse: Zwischenrufe im Parlament
       </a>
     </h1>
-      Im Parlament würde nicht mehr richtig, entsprechend eines demokratischen Ideals, gearbeitet werden. Entscheidungen würden nicht mehr im verbalen Kampf, sondern in verborgenen Hinterzimmer getroffen werden. Früher, sei das anders gewesen: Da habe man gebannt vor dem Radio gesessen und den “wortgewaltige Rednern” zugehört.  Stimmt das? Wurde früher mehr gestritten?
+      Im Parlament würde nicht mehr richtig, entsprechend eines demokratischen Ideals, gearbeitet werden. Entscheidungen würden nicht mehr im verbalen Kampf, sondern in verborgenen Hinterzimmer getroffen werden. Früher, sei das anders gewesen: Da habe man gebannt vor dem Radio gesessen und den “wortgewaltige Rednern” zugehört.  Stimmt das? Wurde früher mehr gestritten? Oder ist das nur ein subjektiver, rückwärtsblickender Eindruck?
 
 
   </article>
@@ -60,7 +60,7 @@
         Historiker als soziales Netzwerk - (Medium-)Big Data!
       </a>
     </h1>
-      Über Historiker gibt es unter den Historiker eine Reihe von <em>gefühlte Wahrheiten</em> oder Wissen, dass rein auf Erfahrungen beruht: Es gäbe Rezensions- oder Tagungscliquen, wenig Austausch zwischen verschiedenen speziellen Unterdisziplinen und dergleichen. Aber stimmt das auch?
+      Über Historiker kursieren, gerade unter den Historiker selbst, eine Reihe von <em>gefühlte Wahrheiten</em>: Es gäbe Rezensions- oder Tagungscliquen. Ebenso gäbe es wenig Austausch zwischen den verschiedenen speziellen Unterdisziplinen und den jeweiligen Epochen. Aus der eigenen Erfahrung heraus, haben sicherlich viele Historiker ähnliche Eindrücke von der “Zunft” der Historiker. Aber stimmt das auch?
 
 
   </article>
@@ -73,7 +73,7 @@
         Historiker als soziales Netzwerk - Konferenzberichte als (Daten-)Quelle
       </a>
     </h1>
-      Die Tagungsberichte von HSozKult enthalten neben einer umfassenden Zusammenfassung der Vorträge viele nützliche Informationen: Name und Ursprung des Berichts, Thema, Zeit und Ort der Konferenz, Namen und Herkunftsorte der Referenten sowie durch die Redakteure vergeben Schlagworte für die Epochen und Themenbereiche der Veranstaltung. Die meisten dieser Daten lassen sich regelhaft auslesen.
+      Die Tagungsberichte von HSozKult enthalten neben einer Zusammenfassung der Vorträge viele nützliche Informationen: Name und Ursprung des Berichts, Thema, Zeit und Ort der Konferenz, Namen und Herkunftsorte der Referenten sowie durch die Redakteure vergeben Schlagworte für die Epochen und Themenbereiche der Veranstaltung. Die meisten dieser Daten lassen sich regelhaft auslesen.
 
 
   </article>
@@ -83,10 +83,10 @@
 
     <h1 class="post-title">
       <a href="/2018/04/23/sparql-karte/">
-        Fingerübung in SPARQL - Geburtsorte deutscher Schriftsteller
+        SPARQL - Geburtsorte deutscher Schriftsteller
       </a>
     </h1>
-      Geburtsorte deutsche Schriftsteller aus dem 19., 20. und 21. Jahrhundert: Abfrage über SPARQL aus der DBPedia und Visualisierung mit Google Maps.
+      Aus den Konferenzberichten ließen sich die Namen von Historikern identifizieren. Doch wer sind die jeweiligen Historiker? Diese Informationen sind - zumindest aus Sicht der Data-Science - wesentlich schwerer zu bekommen: Univerisätswebseiten sind zu unterschiedlich, oftmals unstrukturiert und werden nur selten regelmäßig redaktionell gepflegt. Die Wikipedia jedoch bietet eine Anlaufstelle, zumindest die bekannteren Historiker haben dort eine Seite. Doch auch hier stellt sich die Frage: Wie können diese Informationen effizient ausgelesen werden? Auszeichnungen sind im Quelltext nicht vorhanden.
 
 
   </article>
@@ -99,7 +99,7 @@
         Historiker im sozialen Graph
       </a>
     </h1>
-      Wer mit wem? Wer war wo? Auf Basis der Daten die ich <a href="/2018/04/23/konferenzbericht-quelle-daten/">extrahiert habe</a> ließ sich im nächsten Schritt eine Liste der Knoten und eine Liste der Kanten erzeugen - um daraus eine bunte Grafik zu erzeugen ;-)
+      Wer mit wem? Wer war wo? Auf Basis der Daten die ich <a href="/2018/04/23/konferenzbericht-quelle-daten/">extrahiert habe</a> ließ sich im nächsten Schritt eine Liste der Knoten und eine Liste der Kanten erzeugen - um daraus eine “bunte” Grafik zu erzeugen.
 
 
   </article>
@@ -112,7 +112,7 @@
         Historiker als soziales Netzwerk - die Zahlen
       </a>
     </h1>
-      Mehr als 44000 unterschiedliche Konferenzteilnehmer auf ungefähr 7500 Konferenzen mit knapp 82000 Konferenzbesuchern sind auf HSozKult verzeichnet. Die <a href="/2018/04/23/konferenzbericht-quelle-daten/">extrahierten</a> und <a href="/2018/04/24/konferenzberichte-graph/">nach Knoten und Kanten sortierten Daten</a> lassen sich nun mit pandas verarbeiten und analysieren, sowie weiterhin mit networkx untersuchen. Doch was sagen diese Zahlen letztlich aus?
+      Mehr als 44000 unterschiedliche Konferenzteilnehmer auf ungefähr 7500 Konferenzen mit knapp 82000 Konferenzbesuchen sind auf HSozKult verzeichnet. Die <a href="/2018/04/23/konferenzbericht-quelle-daten/">extrahierten</a> und <a href="/2018/04/24/konferenzberichte-graph/">nach Knoten und Kanten sortierten Daten</a> lassen sich nun mit pandas verarbeiten und analysieren, sowie weiterhin mit networkx untersuchen. Doch was sagen diese Zahlen letztlich aus?
 
 
   </article>
@@ -125,7 +125,7 @@
         Historiker als soziales Netzwerk - eine schnelle Karte
       </a>
     </h1>
-      In welcher Stadt waren die meisten Konferenzen? Mit Hilfe einer Karte, lassen sich die Hotspots für Historiker zumindest in Deutschland identifizieren. Ich beschränke mich dabei auf Orte mit mindestens 8 Konferenzen. Leider hat die Google GeoCode-Api einfach angenommen, es wäre Augsburg und Rom in den USA gemeint ;-)
+      In welcher Stadt waren die meisten Konferenzen? Mit Hilfe einer Karte, lassen sich die Hotspots für Historiker zumindest in Deutschland identifizieren. Ich beschränke mich dabei auf Orte mit mindestens 8 Konferenzen. Leider hat die Google GeoCode-Api einfach angenommen, es wäre das Augsburg oder Rom in den USA gemeint.
 
 
   </article>
@@ -136,7 +136,7 @@
 
       <footer class="footer">
         <small>
-          &copy; <time datetime="2018-05-03T16:28:19+02:00">2018</time>. All rights reserved.
+          &copy; <time datetime="2018-05-06T15:26:20+02:00">2018</time>. All rights reserved.
         </small>
 
   

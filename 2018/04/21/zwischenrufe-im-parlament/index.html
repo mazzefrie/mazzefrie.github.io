@@ -40,8 +40,9 @@
         <article class="post">
   <h1 class="post-title">Daten-Analyse: Zwischenrufe im Parlament</h1>
   <time datetime="2018-04-21T00:00:00+02:00" class="post-date">21 Apr 2018</time>
-  <p>Im Parlament würde nicht mehr richtig, entsprechend eines demokratischen Ideals, gearbeitet werden. Entscheidungen würden nicht mehr im verbalen Kampf, sondern in verborgenen Hinterzimmer getroffen werden. Früher, sei das anders gewesen: Da habe man gebannt vor dem Radio gesessen und den “wortgewaltige Rednern” zugehört.  Stimmt das? Wurde früher mehr gestritten?</p>
+  <p>Im Parlament würde nicht mehr richtig, entsprechend eines demokratischen Ideals, gearbeitet werden. Entscheidungen würden nicht mehr im verbalen Kampf, sondern in verborgenen Hinterzimmer getroffen werden. Früher, sei das anders gewesen: Da habe man gebannt vor dem Radio gesessen und den “wortgewaltige Rednern” zugehört.  Stimmt das? Wurde früher mehr gestritten? Oder ist das nur ein subjektiver, rückwärtsblickender Eindruck?</p>
 
+<h2 id="berechtigte-parlamentarismuskritik">Berechtigte Parlamentarismuskritik?</h2>
 <p>In den letzten 100 Jahren der Parlamentsgeschichte waren jedenfalls viele dieser Meinung:</p>
 
 <blockquote>
@@ -56,21 +57,37 @@
   <p>There was a time when Parliament was the chief arena and instrument of power, when it was necessary to sit there in order to carry measures, or to dictate or determine policy. It is scarcely so now. […] It is far easier, and a far speedier process, to influence Parliament by exciting and indoctrinating the nation than by the more direct process of labour within its walls”<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup></p>
 </blockquote>
 
-<p>Allein daher besteht ein gewisser Grund zum Zweifeln. Mit Hilfe von Daten-Auswertungen könnte man diese subjektiven Eindrücke untermauern oder widerlegen. Meine Idee wäre die Protokolle des Bundestags<sup id="fnref:11"><a href="#fn:11" class="footnote">4</a></sup>: auszuwerten und im besonderen Muster im Auftreten von Zwischenrufen zu ermitteln. Zwischenrufe spielen im Parlament eine wichtige Rolle <sup id="fnref:4"><a href="#fn:4" class="footnote">5</a></sup> und werden von den Stenographen notiert.</p>
+<p>Allein wegen dieser plakativen und vor allem auch historisch bereits greifbaren Sichtweise besteht Grund für Zweifel. Mit Hilfe von Datenauswertungen könnte man diese subjektiven Eindrücke untermauern oder widerlegen. Meine Idee wäre die Protokolle des Bundestags<sup id="fnref:11"><a href="#fn:11" class="footnote">4</a></sup> auszuwerten und im besonderen Muster im Auftreten von Zwischenrufen zu ermitteln. Zwischenrufe spielen im Parlament eine wichtige Rolle  für die Dynamik einer Debatte, sie sind aber ebenso sprachliche Werkzeuge derer sich Parlamentarier gezielt bedienen<sup id="fnref:4"><a href="#fn:4" class="footnote">5</a></sup>.</p>
 
-<p>Nach einem ersten, kurzen Blick in die Daten zeigt sich aber eine gewisse Tendenz(<a href="https://gist.github.com/mazzefrie/15b928808e9966ac66d9bc990288dd3d">Gist</a>):</p>
+<h2 id="isolierung-von-zwischenrufen">Isolierung von Zwischenrufen</h2>
+<p>Von den den Stenographen werden und wurden sie in der Regel notiert, wie in den folgenden Beispielen:</p>
+
+<blockquote>
+  <p>Zuruf von der CDU/CSU: Sehr gut! — Dr. Emmerlich [SPD]: In Bayern die CSU — leider!<br />
+Beifall bei der CDU/CSU — Dr. Emmerlich [SPD]: Geschichtsklitterung!<br />
+Beifall bei der CDU/CSU und der FDP — Lachen bei der SPD <br />
+Beifall bei der CDU/CSU und der FDP — Lachen bei der SPD und dem Bündnis 90/ GRÜNE — Frau Dr. Däubler-Gmelin [SPD]: Helmut ist eben doch der Größte!</p>
+</blockquote>
+
+<p>Im Text werden sie durch Klammern oder Absätze gekennzeichnet. Sie lassen sich daher mit einfachen regulären Ausdrücken identifizieren. (<a href="https://gist.github.com/mazzefrie/15b928808e9966ac66d9bc990288dd3d">Gist</a>)</p>
+
+<h2 id="eine-berraschende-tendenz">Eine überraschende Tendenz?</h2>
+<p>Nach einem ersten, kurzen Blick in die Daten zeigt sich eine gewisse Tendenz:</p>
 
 <p><img src="/images/zwischenrufe.png" alt="Durchschnittliche Zwischenrufe im Jahresdurchschnitt" /></p>
 
 <p>Zumindest die Zahl der Einschübe hat im Lauf der Jahre zugenommen. Es gibt allerdings noch andere Gründe für den Anstieg:<br />
 * Änderungen in der Stenographische Praxis<br />
-* Der Bundestag ist insgesamt aktiver</p>
+* Der Bundestag ist insgesamt aktiver: Wie ist das Verhältnis von Zwischenrufen und Anzahl der Themen, über die debattiert wurde?<br />
+* Die Daten enthalten außerdem noch verschiedene Anomalien (“Schluß der Sitzung: 12 Uhr 34 Minuten” oder “Vgl. S. 6028 D”). Die sind allerdings in der Minderheit und dürften nicht nennenswert ins Gewicht fallen.</p>
 
-<p>Man kann da natürlich noch viel mehr machen, z.B. könnte man mit Google News gucken, wie oft in Zeitungen Debatten erwähnt und zitiert werden, oder umgekehrt: Welche Themen sind erst in der Zeitung und dann im Parlament? Oder: Stimmt es wirklich, dass kritische Gesetze gerne zur Fußball-WM durchgewunken werden? Ebenso bieten sich Methoden des Topic Modeling an um auch eine thematische Analyse einzuflechten.<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup> Bei welcher Art Themen gab es viele Zwischenrufe?</p>
+<h2 id="weitere-perspektiven">Weitere Perspektiven</h2>
 
-<p>Abgesehen davon bieten auch der US-Kongress<sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup>, das australische<sup id="fnref:8"><a href="#fn:8" class="footnote">8</a></sup>, kanadische<sup id="fnref:9"><a href="#fn:9" class="footnote">9</a></sup> und britische<sup id="fnref:10"><a href="#fn:10" class="footnote">10</a></sup> Unterhaus online Zugriff auf die Protokolle.</p>
+<p>Man kann noch viel weitere Ansätze verfolgen, so könnte man mit Google News gucken, wie oft in Zeitungen Debatten erwähnt und zitiert werden, oder umgekehrt: Welche Themen sind erst in der Zeitung und dann im Parlament? Oder: Stimmt es wirklich, dass kritische Gesetze gerne zur Fußball-WM durchgewunken werden? Ebenso bieten sich Methoden des Topic Modeling an um auch eine thematische Analyse einzuflechten.<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup> Bei welcher Art Themen gab es viele Zwischenrufe?</p>
 
-<p>Das war tatsächlich Zufall aber die SZ hat das im Grunde für die aktuelle Legislaturperiode im Grunde genau so gemacht und vor wenigen Tag einen Artikel veröffentlicht. <sup id="fnref:5"><a href="#fn:5" class="footnote">11</a></sup> Das zeigt: Es ist sehr gut machbar und bietete in vielerlei Hinsicht hilfreiche Erkenntnisse - vor allem aber können den <em>gefühlten Wahrheiten</em> durch Daten Substanz verliehen werden.</p>
+<p>Die SZ hat in diesem Sinne jüngst eine Untersuchung vorgenommen. Für die aktuelle Legislaturperiode wurden Zwischenrufe ausgewertet: Welche Fraktion ruft wann dazwischen? Wer lacht für oder gegen wen?<sup id="fnref:5"><a href="#fn:5" class="footnote">7</a></sup> Die Ergebnissen zeigen: Eine solche Untersuchung ist gut machbar und bietete in vielerlei Hinsicht hilfreiche Erkenntnisse - vor allem aber können den <em>gefühlten Wahrheiten</em> durch Daten Substanz verliehen werden.</p>
+
+<p>Abgesehen davon bieten auch der US-Kongress<sup id="fnref:7"><a href="#fn:7" class="footnote">8</a></sup>, das australische<sup id="fnref:8"><a href="#fn:8" class="footnote">9</a></sup>, kanadische<sup id="fnref:9"><a href="#fn:9" class="footnote">10</a></sup> und britische<sup id="fnref:10"><a href="#fn:10" class="footnote">11</a></sup> Unterhaus online Zugriff auf die Protokolle. Gerade die britischen Protokolle reichen bis in das 19. Jahrhundert zurück. Die Daten bieten also die Möglichkeit eines zeitlichen und systematischen Vergleich.</p>
 
 <div class="footnotes">
   <ol>
@@ -92,6 +109,9 @@
     <li id="fn:6">
       <p>Heiberger R.H., Koss C. (2018) Computerlinguistische Textanalyse und Debatten im Parlament. In: Brichzin J., Krichewsky D., Ringel L., Schank J. (eds) Soziologie der Parlamente. Politische Soziologie. Springer VS, Wiesbaden, https://doi.org/10.1007/978-3-658-19945-6_15 <a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
     </li>
+    <li id="fn:5">
+      <p>https://projekte.sueddeutsche.de/artikel/politik/die-afd-im-bundestag-e362724/ <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    </li>
     <li id="fn:7">
 
       <p><a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
@@ -106,9 +126,6 @@
     </li>
     <li id="fn:10">
       <p>http://www.hansard-archive.parliament.uk/ <a href="#fnref:10" class="reversefootnote">&#8617;</a></p>
-    </li>
-    <li id="fn:5">
-      <p>https://projekte.sueddeutsche.de/artikel/politik/die-afd-im-bundestag-e362724/ <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
     </li>
   </ol>
 </div>
@@ -149,7 +166,7 @@
 
       <footer class="footer">
         <small>
-          &copy; <time datetime="2018-05-03T16:28:19+02:00">2018</time>. All rights reserved.
+          &copy; <time datetime="2018-05-06T15:26:20+02:00">2018</time>. All rights reserved.
         </small>
 
   

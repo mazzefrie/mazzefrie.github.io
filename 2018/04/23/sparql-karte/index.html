@@ -7,7 +7,7 @@
 
   <title>
     
-      Fingerübung in SPARQL - Geburtsorte deutscher Schriftsteller &middot; Matthias Friedmann
+      SPARQL - Geburtsorte deutscher Schriftsteller &middot; Matthias Friedmann
     
   </title>
 
@@ -38,13 +38,15 @@
 
       <main>
         <article class="post">
-  <h1 class="post-title">Fingerübung in SPARQL - Geburtsorte deutscher Schriftsteller</h1>
+  <h1 class="post-title">SPARQL - Geburtsorte deutscher Schriftsteller</h1>
   <time datetime="2018-04-23T00:00:00+02:00" class="post-date">23 Apr 2018</time>
-  <p>Geburtsorte deutsche Schriftsteller aus dem 19., 20. und 21. Jahrhundert: Abfrage über SPARQL aus der DBPedia und Visualisierung mit Google Maps.</p>
+  <p>Aus den Konferenzberichten ließen sich die Namen von Historikern identifizieren. Doch wer sind die jeweiligen Historiker? Diese Informationen sind - zumindest aus Sicht der Data-Science - wesentlich schwerer zu bekommen: Univerisätswebseiten sind zu unterschiedlich, oftmals unstrukturiert und werden nur selten regelmäßig redaktionell gepflegt. Die Wikipedia jedoch bietet eine Anlaufstelle, zumindest die bekannteren Historiker haben dort eine Seite. Doch auch hier stellt sich die Frage: Wie können diese Informationen effizient ausgelesen werden? Auszeichnungen sind im Quelltext nicht vorhanden.</p>
 
-<p>Die Abfrage ist relativ einfach:</p>
+<p>Einen Möglichkeit bietet die DBpedia, deren Ziel darin besteht die Daten der Wikipedia “semantisch” aufzubereiten, so dass sie als verlinkte Metadaten vorliegen und entsprechend verarbeitbar und abfragbar sind - zum Beispiel über SPARQL. Als Vorbereitung auf eine Integration in die HSK-Daten, habe ich eine einfache Abfrage generiert, auf deren Basis die Geburtsorte deutscher SchriftstellerInnen des 19., 20. und 21. Jahrhunderts in einer Karte angezeigt werdne,</p>
 
-<p>SELECT DISTINCT ?person,?name,?birthplace,$lat,$long,<br />
+<p>Die Abfrage ist relativ einfach, auch wenn der Syntax zunächst irritiert - vermutlich wurden bald alle Symbole zur Markierung von Platzhaltern verwendet:</p>
+
+<p>SELECT DISTINCT ?person,?name,?birthplace,?lat,?long,<br />
 WHERE  {</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="err">?person</span><span class="w"> </span><span class="err">&lt;http://purl.org/dc/terms/subject&gt;</span><span class="w"> </span><span class="err">&lt;http://dbpedia.org/resource/Category:19th-century_German_novelists&gt;</span><span class="p">}</span><span class="w">
@@ -154,7 +156,7 @@ WHERE  {</p>
 
       <footer class="footer">
         <small>
-          &copy; <time datetime="2018-05-03T16:28:19+02:00">2018</time>. All rights reserved.
+          &copy; <time datetime="2018-05-06T15:26:20+02:00">2018</time>. All rights reserved.
         </small>
 
   

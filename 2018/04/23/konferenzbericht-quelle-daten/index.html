@@ -40,7 +40,7 @@
         <article class="post">
   <h1 class="post-title">Historiker als soziales Netzwerk - Konferenzberichte als (Daten-)Quelle</h1>
   <time datetime="2018-04-23T00:00:00+02:00" class="post-date">23 Apr 2018</time>
-  <p>Die Tagungsberichte von HSozKult enthalten neben einer umfassenden Zusammenfassung der Vorträge viele nützliche Informationen: Name und Ursprung des Berichts, Thema, Zeit und Ort der Konferenz, Namen und Herkunftsorte der Referenten sowie durch die Redakteure vergeben Schlagworte für die Epochen und Themenbereiche der Veranstaltung. Die meisten dieser Daten lassen sich regelhaft auslesen.</p>
+  <p>Die Tagungsberichte von HSozKult enthalten neben einer Zusammenfassung der Vorträge viele nützliche Informationen: Name und Ursprung des Berichts, Thema, Zeit und Ort der Konferenz, Namen und Herkunftsorte der Referenten sowie durch die Redakteure vergeben Schlagworte für die Epochen und Themenbereiche der Veranstaltung. Die meisten dieser Daten lassen sich regelhaft auslesen.</p>
 
 <nav class="toc">
   <h4>Inhalt</h4>
@@ -66,7 +66,13 @@
 <p>Die Konferenzberichte von HSozKult weisen zunächst nur bedingt Anhaltspunkte auf mit deren Hife sich Metadaten identifizieren ließen. Allerdings erkennt man im Quelltext durchaus einen regelhaften Aufbau: Mit CSS-Klassen wie <em>hfn-item-key</em> oder <em>metaBlock</em> und <em>metaBlockKey</em> sowie den dem Geschwister oder Eltern-Selektor können identifiziert werden. Auf Basis der CSS-Klassen lassen sich die Daten jeweils Ort, Name und Datum der Konferenz auslesen, ebenso der Autor des Berichts sowie die vergeben Schlagworte.</p>
 
 <h2 id="part-of-speech-zur-identifikation-der-teilnehmer">Part-of-Speech zur Identifikation der Teilnehmer</h2>
-<p>Der Text des Berichts selbst jedoch besteht aus nicht semantischem HTML. Daten aus diesem Berich zu extrahieren bedarf also eines größeren Aufwands. Mit Hilfe er <em>nltk</em>-Bibliothek lässt sich der Text zunächst in tokens zerlegen und eine part-of-speech-Erkennung durchführen. <em>nltk</em> wird jedoch zunächst nur mit einem englischen Model geliefert und daher muss zunächst ein entsprechendes Model für die deutsche Sprache geladen werden.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
+<p>Der Text des Berichts selbst jedoch besteht aus nicht semantischem HTML. Daten aus diesem Berich zu extrahieren bedarf also eines größeren Aufwands. Es zeigt sich jedoch, dass in der Mehrheit der Berichte die redaktionelle Konvention besteht, die Namen von Rednern in Großbuchstaben gefolgt von dem Ortnamen darzustellen:</p>
+
+<blockquote>
+  <p>MATTHIAS FRIEDMANN (Münster) stellte in seinem Vortrag die wichtige kommunikative Funktion von Informationen dar.</p>
+</blockquote>
+
+<p>Mit Hilfe er <em>nltk</em>-Bibliothek lässt sich der Text zunächst in tokens zerlegen und eine part-of-speech-Erkennung durchführen. <em>nltk</em> wird jedoch zunächst nur mit einem englischen Model geliefert und daher muss zunächst ein entsprechendes Model für die deutsche Sprache geladen werden.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> Sicherlich gäbe es dafür auch eine elegantere Lösung - prinzipiell könnte dies auch mit regulären Ausdrücken umgesetzt werden.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>	<span class="kn">import</span> <span class="nn">nltk</span>
 	<span class="kn">import</span> <span class="nn">pickle</span>
@@ -80,13 +86,13 @@
 </code></pre>
 </div>
 
-<p>Damit erhalt man einen entsprechenden Graphen, in dem die jeweilien Tokens in ihrer Funktion im Satz identifiziert wurden. Dabei konnten Tokens als Namen identifiziert werden. Allerdings wird dabei noch nicht zwischen Vor- und Nachnamen oder gar Orts- und funktionalen Namen (“Universität”) unterschieden. Es zeigt sich jedoch, dass in der Mehrheit der Berichte die redaktionelle Konvention besteht, die Namen von Rednern in Großbuchstaben gefolgt von dem Ortnamen darzustellen:</p>
+<p>Damit erhält man einen entsprechenden Graphen bzw. eine Liste, in der die jeweilien Tokens in ihrer Funktion im Satz identifiziert wurden. Dabei konnten Tokens als Namen identifiziert werden.</p>
 
 <blockquote>
-  <p>MATTHIAS FRIEDMANN (Münster) stellte in seinem Vortrag die wichtige kommunikative Funktion von Informationen dar.</p>
+  <p>(‘MATTHIAS’, ‘NE’), (‘FRIEDMANN’, ‘NE’), (‘(‘, ‘$(‘), (‘Munster’, ‘NE’), (‘)’, ‘$(‘), (‘stellte’, ‘VVFIN’), (‘in’, ‘APPR’), (‘seinem’, ‘PPOSAT’), (‘Vortrag’, ‘NN’), (‘die’, ‘ART’), (‘wichtige’, ‘ADJA’), (‘kommunikative’, ‘ADJA’), (‘Funktion’, ‘NN’), (‘von’, ‘APPR’), (‘Informationen’, ‘NN’), (‘dar’, ‘PTKVZ’),</p>
 </blockquote>
 
-<p>Der markierte Token-Baum musste also nach aufeinanderfolgenden Namen (Tokens markiert als NE) sowie Text in Großbuchstaben durchsucht werde, z.B.:</p>
+<p>Allerdings wird dabei noch nicht zwischen Vor- und Nachnamen oder gar Orts- und funktionalen Namen (“Universität”) unterschieden.  Der markierte Token-Baum musste also nach aufeinanderfolgenden Namen (Tokens markiert als NE) sowie Text in Großbuchstaben durchsucht werde, z.B.:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">obj</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tagged</span><span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
@@ -94,14 +100,12 @@
             <span class="k">if</span> <span class="n">obj</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s">"NE"</span> <span class="ow">and</span> <span class="n">obj</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">isupper</span><span class="p">():</span>
                 <span class="n">name</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">obj</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
             <span class="k">else</span><span class="p">:</span>
-            	<span class="c"># Es ist kein Name, sondern vielleicht ein Ort?</span>
+            	<span class="c"># Es ist kein Name in Großbuchstaben</span>
 
         <span class="k">except</span> <span class="p">(</span><span class="nb">ValueError</span><span class="p">,</span> <span class="nb">IndexError</span><span class="p">):</span>
             <span class="k">pass</span>        
 </code></pre>
 </div>
-
-<p>Sicherlich gäbe es dafür auch eine elegantere Lösung. Prinzipiell könnte dies auch mit regulären Ausdrücken umgesetzt werden.</p>
 
 <p>Einige Fehler traten dabei auf, wenn mehrere Namen in Folge aufgelistet und nicht deutlich getrennt wurden, bei Namen die aus mehr als zwei Bausteinen (beispielsweise Namen mit “van” oder abgekürztem Zweitnamen) bestehen sowie schließlich Namen, bei denen die Konvention in Großbuchstaben zu schreiben nicht eingehalten wurden, was bei einem Teil der Berichte der Fall ist.</p>
 
@@ -143,7 +147,6 @@ Einige Fehler ließen sich offenbar beheben. Sehr auffällig ist jedoch, dass di
 <p>Auf Basis dieser Vorgehensweise lassen sich schließlich zwei Datensätze generieren:</p>
 
 <h3 id="liste-der-konferenzen">Liste der Konferenzen</h3>
-
 <p>Der Datensatz setzt sich zusammen aus der ID des Konferenzberichts auf der Ursprungsseite, dem Titel der Konferenz, Anfangs- und Enddatum, die jeweils vergebenen Schlagworte für Epoche und Thema sowie die Anzahl der identifizierten Teilnehmer:</p>
 
 <pre><code class="language-csv">Key,CID,Title,StartDate,EndDate,Epoche,Thema,Counts
@@ -153,7 +156,6 @@ Einige Fehler ließen sich offenbar beheben. Sehr auffällig ist jedoch, dass di
 </code></pre>
 
 <h3 id="liste-der-teilnehmer">Liste der Teilnehmer</h3>
-
 <p>Der Datensatz enthält ebenso die ID der Konferenz auf der Seite sowie den Namen der Person.</p>
 
 <pre><code class="language-csv">Key,CID,Person
@@ -223,7 +225,7 @@ Einige Fehler ließen sich offenbar beheben. Sehr auffällig ist jedoch, dass di
 
       <footer class="footer">
         <small>
-          &copy; <time datetime="2018-05-03T16:28:19+02:00">2018</time>. All rights reserved.
+          &copy; <time datetime="2018-05-06T15:26:20+02:00">2018</time>. All rights reserved.
         </small>
 
   
